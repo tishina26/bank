@@ -16,7 +16,7 @@ const app = express();
 
 async function main() {
   await mongoose.connect(MONGO_URL);
-  console.log('Connected to moviesdb');
+  console.log('Connected to bank');
 
   await app.listen(PORT);
   console.log(`Server listen on ${PORT}`);
@@ -31,7 +31,7 @@ app.use(limiter);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/express_backend', (req, res) => {
+app.get('/', (req, res) => {
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 });
 app.use(router);

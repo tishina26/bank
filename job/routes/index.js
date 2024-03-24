@@ -1,3 +1,4 @@
+// routes/index.js
 const router = require('express').Router();
 const { registerValidator, authValidator } = require('../middlewares/validation');
 const { createUser, login } = require('../controllers/users');

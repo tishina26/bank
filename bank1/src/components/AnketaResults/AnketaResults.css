@@ -1,0 +1,27 @@
+
+
+.anketa-results {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 0px 20px;
+  margin-top: 0px;
+}
+
+.anketa-results-heading {
+}
+
+.edit-anketa-button {
+  background-color: #E57E46; /* оранжевый */
+  color: black;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.edit-anketa-button:hover {
+  background-color: #c25920; /* оранжевый, немного темнее при наведении */
+}

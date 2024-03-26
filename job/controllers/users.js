@@ -76,3 +76,65 @@ module.exports.updateUser = async (req, res, next) => {
     }
   }
 };
+
+module.exports.getAnketa = async (req, res, next) => {
+  try {
+    const user = await User.findById(req.user._id);
+    if (!user) {
+      throw new NotFoundError(USER_NOT_FOUND);
+    }
+    res.send({
+      debtAmount: user.debtAmount,
+      payDelay: user.payDelay,
+      payToOneCreditor: user.payToOneCreditor,
+      additionalQuestion1: user.additionalQuestion1,
+      additionalQuestion2: user.additionalQuestion2,
+      additionalQuestion3: user.additionalQuestion3,
+      additionalQuestion4: user.additionalQuestion4,
+      bankruptcyConclusion: user.bankruptcyConclusion
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports.updateAnketa = async (req, res, next) => {
+    try {
+      const { debtAmount,
+        payDelay,
+        payToOneCreditor,
+        additionalQuestion1,
+        additionalQuestion2,
+        additionalQuestion3,
+        additionalQuestion4,
+        bankruptcyConclusion
+      } = req.body;
+      const user = await User.findByIdAndUpdate(
+        req.user._id,
+        {
+          debtAmount,
+          payDelay,
+          payToOneCreditor,
+          additionalQuestion1,
+          additionalQuestion2,
+          additionalQuestion3,
+          additionalQuestion4,
+          bankruptcyConclusion
+        },
+        { new: true },
+      );
+      if (!user) {
+        throw new NotFoundError(USER_NOT_FOUND);
+      }
+      res.end();
+    } catch (err) {
+      if (err.name === 'ValidationError') {
+        next(new ValidationError(VALIDATION_ERROR_MESSAGE));
+      } else if (err.code === 11000) {
+        next(new ConflictError(CONFLICT_ERROR_MESSAGE));
+      } else {
+        next(err);
+      }
+    }
+    console.log(req.body);
+};

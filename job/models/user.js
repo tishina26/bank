@@ -25,6 +25,38 @@ const userSchema = new mongoose.Schema({
     required: true,
     select: false,
   },
+  debtAmount: {
+    type: String,
+    required: false,
+  },
+  payDelay: {
+    type: String,
+    required: false,
+  },
+  payToOneCreditor: {
+    type: String,
+    required: false,
+  },
+  additionalQuestion1: {
+    type: String,
+    required: false,
+  },
+  additionalQuestion2: {
+    type: String,
+    required: false,
+  },
+  additionalQuestion3: {
+    type: String,
+    required: false,
+  },
+  additionalQuestion4: {
+    type: String,
+    required: false,
+  },
+  bankruptcyConclusion: {
+    type: String,
+    required: false,
+  }
 });
 
 userSchema.statics.findUserByCredentials = function (email, password) {

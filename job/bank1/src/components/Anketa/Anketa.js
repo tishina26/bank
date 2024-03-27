@@ -18,37 +18,37 @@ const Anketa = (props) => {
     let conclusion =''
     if (debtAmount === "more1") {
       if (payDelay === 'yes') {
-        conclusion ='Итоговое заключение о судебном банкротстве с обязанностью обращения в течение 30 дней.';
+        conclusion ='HaveTo';
       } else if (payToOneCreditor === 'yes') {
-        conclusion ='Итоговое заключение о судебном банкротстве с обязанностью обращения в течение 30 дней.';
+        conclusion ='HaveTo';
       } else {
-        conclusion ='Итоговое заключение о судебном банкротстве без обязанности обращения в суд в течение 30 дней.';
+        conclusion ='NotHaveTo';
       }
     } else if (debtAmount === "less1more500") {
       if (payDelay === 'yes') {
-        conclusion ='Итоговое заключение о судебном банкротстве с обязанностью обращения в течение 30 дней.';
+        conclusion ='HaveTo';
       } else if (payToOneCreditor === 'yes') {
-        conclusion ='Итоговое заключение о судебном банкротстве с обязанностью обращения в течение 30 дней.';
+        conclusion ='HaveTo';
       } else if (additionalQuestion1 === 'no' && additionalQuestion2 === 'no' && additionalQuestion3 === 'no' && additionalQuestion4 === 'no') {
-        conclusion ='Итоговое заключение о судебном банкротстве без обязанности обращения в суд в течение 30 дней.';
+        conclusion ='NotHaveTo';
       } else {
-        conclusion ='Итоговое заключение о доступности двух видов банкротства на выбор';
+        conclusion ='Both';
       }
     }
     else if (debtAmount === "more25less500") {
       if (payToOneCreditor === 'yes') {
-        conclusion ='Итоговое заключение о судебном банкротстве с обязанностью обращения в течение 30 дней.';
+        conclusion ='HaveTo';
       } else if (additionalQuestion1 === 'no' && additionalQuestion2 === 'no' && additionalQuestion3 === 'no' && additionalQuestion4 === 'no') {
-        conclusion ='Итоговое заключение о судебном банкротстве без обязанности обращения в суд в течение 30 дней.';
+        conclusion ='NotHaveTo';
       } else {
-        conclusion ='Итоговое заключение о доступности двух видов банкротства на выбор';
+        conclusion ='both';
       }
     }
     else if (debtAmount === "less25") {
       if (payToOneCreditor === 'yes') {
-        conclusion ='Итоговое заключение о судебном банкротстве с обязанностью обращения в течение 30 дней.';
+        conclusion ='HaveTo';
       } else {
-        conclusion ='Итоговое заключение о судебном банкротстве без обязанности обращения в суд в течение 30 дней.';
+        conclusion ='NotHaveTo';
       }
     }
     setBankruptcyConclusion(conclusion)
@@ -145,7 +145,7 @@ const Anketa = (props) => {
           </div>
           )}
 
-        {debtAmount === "more1" && (
+        {((debtAmount === "more1")||(debtAmount === "less1more500" )) && (
           <div>
             <>
               <label>2.1. Вы не платите по своим долгам больше 3 месяцев?</label>
@@ -172,7 +172,7 @@ const Anketa = (props) => {
             </>
           </div>
         )}
-        {debtAmount === "more1" && payDelay === 'no' && (
+        {((debtAmount === "more1" && payDelay === 'no')||(debtAmount === "less25")||(debtAmount === "less1more500" && payDelay === 'no')||(debtAmount === "more25less500")) && (
           <div>
             <>
               <label>2.2. Если вы заплатите весь долг одному из своих кредиторов, то не сможете заплатить другим?</label>
@@ -200,65 +200,13 @@ const Anketa = (props) => {
           </div>
         )}
 
-        {debtAmount === "less1more500" && (
-          <div>
-            <>
-              <label>2.1. Вы не платите по своим долгам больше 3 месяцев?</label>
-              <div>
-                <label>
-                  <input
-                    type="radio"
-                    value="yes"
-                    checked={payDelay === "yes"}
-                    onChange={(e) => setPayDelay(e.target.value)}
-                  />
-                  Да
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="no"
-                    checked={payDelay === "no"}
-                    onChange={(e) => setPayDelay(e.target.value)}
-                  />
-                  Нет
-                </label>
-              </div>
-            </>
-          </div>
-        )}
-        {(debtAmount === "less1more500" && payDelay === 'no') && (
-          <div>
-            <>
-              <label>2.2. Если вы заплатите весь долг одному из своих кредиторов, то не сможете заплатить другим?</label>
-              <div>
-                <label>
-                  <input
-                    type="radio"
-                    value="yes"
-                    checked={payToOneCreditor === "yes"}
-                    onChange={(e) => setPayToOneCreditor(e.target.value)}
-                  />
-                  Да
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="no"
-                    checked={payToOneCreditor === "no"}
-                    onChange={(e) => setPayToOneCreditor(e.target.value)}
-                  />
-                  Нет
-                  </label>
-                </div>
-              </>
-            </div>
-          )}
-
-          {debtAmount === "less1more500" && payDelay === 'no' && payToOneCreditor === 'no' && (
+          {((debtAmount === "less1more500" && payDelay === 'no')||(debtAmount === "more25less500")) && payToOneCreditor === 'no' && (
             <div>
               <>
-                <label>3.1. Дополнительный вопрос 1</label>
+                <label>3.1. В Вашем отношении соблюдаются одновременно следующие условия?
+                <ul><li>в отношении Вас окончено исполнительное производство в связи с возвращением исполнительного документа взыскателю, т.к. у Вас нет имущества, которым Вы можете расплатится по своим долгам;
+                </li><li>у Вас не имеется иных неоконченных (или не прекращенных) исполнительных производств по взысканию долгов, возбужденных после возвращения исполнительного документа взыскателю?
+                </li></ul></label>
                 <div>
                   <label>
                     <input
@@ -281,7 +229,11 @@ const Anketa = (props) => {
                 </div>
               </>
               <>
-                <label>3.2. Дополнительный вопрос 2</label>
+                <label>3.2. В Вашем отношении соблюдаются одновременно следующие условия?
+                <ul><li>основной Ваш доход составляет пенсия;
+                </li><li>у Вас есть выданный не позднее 1-го года назад исполнительный документ имущественного характера, который предъявлялся к исполнению (направлялся для исполнения), и требования по нему не исполнены или исполнены частично;
+                </li><li>на дату подачи заявления у Вас нет имущества, на которое может быть обращено взыскание.
+                </li></ul></label>
                 <div>
                   <label>
                     <input
@@ -304,7 +256,11 @@ const Anketa = (props) => {
                 </div>
               </>
               <>
-                <label>3.3. Дополнительный вопрос 3</label>
+                <label>3.3. В Вашем отношении соблюдаются одновременно следующие условия?
+                <ul><li>Вы являетесь получателем ежемесячного пособия в связи с рождением и воспитанием ребенка;
+                </li><li>у Вас есть выданный не позднее 1-го года назад исполнительный документ имущественного характера, который предъявлялся к исполнению (направлялся для исполнения), и требования по нему не исполнены или исполнены частично;
+                </li><li>на дату подачи заявления у Вас нет имущества, на которое может быть обращено взыскание;
+                </li></ul></label>
                 <div>
                   <label>
                     <input
@@ -327,7 +283,7 @@ const Anketa = (props) => {
                 </div>
               </>
               <>
-                <label>3.4. Дополнительный вопрос 4</label>
+                <label>3.4. У Вас есть выданный не позднее чем 7 лет назад документ имущественного характера, который предъявлялся к исполнению (направлялся для исполнения), и данные требования не исполнены или исполнены частично?</label>
                 <div>
                   <label>
                     <input
@@ -351,163 +307,6 @@ const Anketa = (props) => {
               </>
             </div>
           )}
-
-
-          {(debtAmount === "more25less500") && (
-          <div>
-            <>
-              <label>2.2. Если вы заплатите весь долг одному из своих кредиторов, то не сможете заплатить другим?</label>
-              <div>
-                <label>
-                  <input
-                    type="radio"
-                    value="yes"
-                    checked={payToOneCreditor === "yes"}
-                    onChange={(e) => setPayToOneCreditor(e.target.value)}
-                  />
-                  Да
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="no"
-                    checked={payToOneCreditor === "no"}
-                    onChange={(e) => setPayToOneCreditor(e.target.value)}
-                  />
-                  Нет
-                  </label>
-                </div>
-              </>
-            </div>
-          )}
-
-          {debtAmount === "more25less500" && payToOneCreditor === 'no' && (
-            <div>
-              <>
-                <label>3.1. Дополнительный вопрос 1</label>
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      value="yes"
-                      checked={additionalQuestion1 === "yes"}
-                      onChange={(e) => setAdditionalQuestion1(e.target.value)}
-                    />
-                    Да
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      value="no"
-                      checked={additionalQuestion1 === "no"}
-                      onChange={(e) => setAdditionalQuestion1(e.target.value)}
-                    />
-                    Нет
-                  </label>
-                </div>
-              </>
-              <>
-              <label>3.2. Дополнительный вопрос 2</label>
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      value="yes"
-                      checked={additionalQuestion2 === "yes"}
-                      onChange={(e) => setAdditionalQuestion2(e.target.value)}
-                    />
-                    Да
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      value="no"
-                      checked={additionalQuestion2 === "no"}
-                      onChange={(e) => setAdditionalQuestion2(e.target.value)}
-                    />
-                    Нет
-                  </label>
-                </div>
-              </>
-              <>
-                <label>3.3. Дополнительный вопрос 3</label>
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      value="yes"
-                      checked={additionalQuestion3 === "yes"}
-                      onChange={(e) => setAdditionalQuestion3(e.target.value)}
-                    />
-                    Да
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      value="no"
-                      checked={additionalQuestion3 === "no"}
-                      onChange={(e) => setAdditionalQuestion3(e.target.value)}
-                    />
-                    Нет
-                  </label>
-                </div>
-              </>
-              <>
-                <label>3.4. Дополнительный вопрос 4</label>
-                <div>
-                  <label>
-                    <input
-                      type="radio"
-                      value="yes"
-                      checked={additionalQuestion4 === "yes"}
-                      onChange={(e) => setAdditionalQuestion4(e.target.value)}
-                    />
-                    Да
-                  </label>
-                  <label>
-                    <input
-                      type="radio"
-                      value="no"
-                      checked={additionalQuestion4 === "no"}
-                      onChange={(e) => setAdditionalQuestion4(e.target.value)}
-                    />
-                    Нет
-                  </label>
-                </div>
-              </>
-            </div>
-          )}
-
-
-        {(debtAmount === "less25") && (
-          <div>
-            <>
-              <label>2.2. Если вы заплатите весь долг одному из своих кредиторов, то не сможете заплатить другим?</label>
-              <div>
-                <label>
-                  <input
-                    type="radio"
-                    value="yes"
-                    checked={payToOneCreditor === "yes"}
-                    onChange={(e) => setPayToOneCreditor(e.target.value)}
-                  />
-                  Да
-                </label>
-                <label>
-                  <input
-                    type="radio"
-                    value="no"
-                    checked={payToOneCreditor === "no"}
-                    onChange={(e) => setPayToOneCreditor(e.target.value)}
-                  />
-                  Нет
-                  </label>
-                </div>
-              </>
-            </div>
-          )}
-
-
 
           {isFinished && (
             <div>

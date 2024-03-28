@@ -95,8 +95,8 @@ const Anketa = (props) => {
 
 
   /*длинные блоки заключений*/
-  const block_of_bankruptcyConclusion_HaveTo = (Object.keys(bankruptcyConclusion).length > 0) && 
-    (((bankruptcyConclusion === 'HaveTo') || bankruptcyConclusion === 'Both')&& (
+  const block_of_bankruptcyConclusion_HaveTo = (Object.keys(conclusion).length > 0) && 
+    (((conclusion === 'HaveTo') || bankruptcyConclusion === 'Both')&& (
     /*заключение с обязанностью*/
     <p>Вам доступно только банкротство через суд, без этого, увы, никак не получится.
       Исходя из вашей анкеты, вы обязаны это сделать. В этом нет ничего страшного, это обычная процедура, но её необходимо соблюдать. Иначе на Вас могут оштрафовать на 1000-3000 рублей за несоблюдение этой обязанности. 

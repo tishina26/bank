@@ -12,43 +12,43 @@ const Anketa = (props) => {
   const [additionalQuestion4, setAdditionalQuestion4] = useState('');
   const [isFinished, setIsFinished] = useState(false);
   const [bankruptcyConclusion, setBankruptcyConclusion] = useState('');
+  const [block_of_bankruptcyConclusion, setBlock_of_bankruptcyConclusion] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let conclusion =''
+    let conclusion ='';
+    const [HaveTo, NotHaveTo, Both] = ['HaveTo', 'NotHaveTo', 'Both'];
     if (debtAmount === "more1") {
       if (payDelay === 'yes') {
-        conclusion ='HaveTo';
+        conclusion = HaveTo;
       } else if (payToOneCreditor === 'yes') {
-        conclusion ='HaveTo';
+        conclusion = HaveTo;
       } else {
-        conclusion ='NotHaveTo';
+        conclusion = NotHaveTo;
       }
     } else if (debtAmount === "less1more500") {
       if (payDelay === 'yes') {
-        conclusion ='HaveTo';
+        conclusion = HaveTo;
       } else if (payToOneCreditor === 'yes') {
-        conclusion ='HaveTo';
+        conclusion = HaveTo;
       } else if (additionalQuestion1 === 'no' && additionalQuestion2 === 'no' && additionalQuestion3 === 'no' && additionalQuestion4 === 'no') {
-        conclusion ='NotHaveTo';
+        conclusion = NotHaveTo;
       } else {
-        conclusion ='Both';
+        conclusion = Both;
       }
-    }
-    else if (debtAmount === "more25less500") {
+    } else if (debtAmount === "more25less500") {
       if (payToOneCreditor === 'yes') {
-        conclusion ='HaveTo';
+        conclusion = HaveTo;
       } else if (additionalQuestion1 === 'no' && additionalQuestion2 === 'no' && additionalQuestion3 === 'no' && additionalQuestion4 === 'no') {
-        conclusion ='NotHaveTo';
+        conclusion = NotHaveTo;
       } else {
-        conclusion ='both';
+        conclusion = Both;
       }
-    }
-    else if (debtAmount === "less25") {
+    } else if (debtAmount === "less25") {
       if (payToOneCreditor === 'yes') {
-        conclusion ='HaveTo';
+        conclusion = HaveTo;
       } else {
-        conclusion ='NotHaveTo';
+        conclusion = NotHaveTo;
       }
     }
     setBankruptcyConclusion(conclusion)
@@ -92,6 +92,50 @@ const Anketa = (props) => {
     setAdditionalQuestion2('');
     setAdditionalQuestion3('');
     setAdditionalQuestion4('');
+
+
+  /*длинные блоки заключений*/
+  const block_of_bankruptcyConclusion_HaveTo = (Object.keys(bankruptcyConclusion).length > 0) && 
+    (((bankruptcyConclusion === 'HaveTo') || bankruptcyConclusion === 'Both')&& (
+    /*заключение с обязанностью*/
+    <p>Вам доступно только банкротство через суд, без этого, увы, никак не получится.
+      Исходя из вашей анкеты, вы обязаны это сделать. В этом нет ничего страшного, это обычная процедура, но её необходимо соблюдать. Иначе на Вас могут оштрафовать на 1000-3000 рублей за несоблюдение этой обязанности. 
+      Чтобы не лишиться так важных для вас в данной ситуации денег, всё нужно успеть сделать за 30 дней с момента как вы об этом узнали. Это может быть момент, когда вы узнали о сумме вашей задолженности или о невозможности расплатиться перед всеми вашими должниками.
+      КНОПКА (Узнайте адрес и контакты арбитражного суда вашего региона)
+      КНОПКА (Подробная информация о вашем процедуре банкротства и рисках) (тут ссылка на общую информацию с переходом сразу к части о судебном банкротстве, чтобы она не повторялась в двух местах одновременно)
+      Для того, чтобы всё сделать грамотно, Вам необходимо правильно оформить все документы. Зарегистрируйтесь и воспользуйтесь составленными нами шаблонами заявления о признании Вас банкротом и полным пакетом документов, необходимых к подаче вместе с ним. 
+    </p>));
+  const block_of_bankruptcyConclusion_NotHaveTo = (Object.keys(conclusion).length > 0) &&
+    (((conclusion === 'NotHaveTo')||(bankruptcyConclusion === 'Both'))&& (
+    /*заключение без обязанности*/
+    <p>Вам доступно только банкротство через суд. Исходя из вашей анкеты в этой процедуре нет прямой необходимости, но если вы считаете это необходимым, то вам предоставлено такое право.
+      Чтобы весь процесс прошел успешно, вам нужно будет доказать то, что вы не можете платить по своим долгам. Это возможно сделать в таких случаях:
+      если вы не оплачиваете долги, которые уже нужно закрыть
+      размер ваших долгов больше чем всё ваше имущество
+      если решением суда уже доказано, что у вас нет никакого имущества
+      если вы не оплатили больше 10 процентов всех ваших долгов, хотя уже прошел месяц с момента, когда должны были их оплатить
+      Помните, что банкротство довольно продолжительная процедура которая потребует времени и усилий. Принимайте своё решение изучив все риски и только после этого обращайтесь в арбитражный суд вашего региона.
+      КНОПКА (Узнайте адрес и контакты арбитражного суда вашего региона)
+      КНОПКА (Подробная информация о вашем процедуре банкротства и рисках) (тут ссылка на общую информацию с переходом сразу к части о судебном банкротстве, чтобы она не повторялась в двух местах одновременно)
+      Для того, чтобы всё сделать грамотно, Вам необходимо правильно оформить все документы. Зарегистрируйтесь и воспользуйтесь составленными нами шаблонами заявления о признании Вас банкротом и полным пакетом документов, необходимых к подаче вместе с ним. 
+    </p>));
+  const block_of_bankruptcyConclusion_Both = (Object.keys(conclusion).length > 0) && (
+    (conclusion === 'Both') && (
+    <p>ИТОГОВОЕ ЗАКЛЮЧЕНИЕ
+    Вы можете выбрать любой путь из представленных:
+    {block_of_bankruptcyConclusion_HaveTo}
+    ИЛИ 
+    {block_of_bankruptcyConclusion_NotHaveTo}
+    </p>));
+  
+  /*теперь выберем нужный нам вариант*/
+  if (conclusion === Both) {
+    setBlock_of_bankruptcyConclusion(block_of_bankruptcyConclusion_Both);
+  } else if (conclusion === HaveTo) {
+    setBlock_of_bankruptcyConclusion(block_of_bankruptcyConclusion_HaveTo);
+  } else {
+    setBlock_of_bankruptcyConclusion(block_of_bankruptcyConclusion_NotHaveTo);
+  }
 };
 
 
@@ -308,11 +352,11 @@ const Anketa = (props) => {
             </div>
           )}
 
-          {isFinished && (
+          {isFinished && ( 
             <div>
 
               <h2>Итоговое заключение</h2>
-              <p>{bankruptcyConclusion}</p>
+              <p>{block_of_bankruptcyConclusion}</p>
               <button onClick={props.navAnketa}>Сохраненные результаты</button>
             </div>
           )}

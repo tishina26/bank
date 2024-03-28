@@ -3,6 +3,7 @@ import "./Footer.css";
 
 function Footer() {
   return (
+          /* eslint-disable */
     <footer className="footer">
       <div className="footer__dev">
         <p className="footer__text">Сведения, предоставленные на сайте носят исключительно справочный характер</p>
@@ -22,6 +23,7 @@ function Footer() {
         </div>
       </div>
       </footer>
+          /* eslint-enable */
   );
 }
 

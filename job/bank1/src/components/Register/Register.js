@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./Register.css";
+// eslint-disable-next-line
 import { Link, useNavigate } from "react-router-dom";
 import logo1 from "../../images/logo1.svg";
 import logo2 from "../../images/logo2.svg";
@@ -14,7 +15,6 @@ function Register(props) {
   const [emailError, setEmailError] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
   const [isRegistered, setIsRegistered] = useState(false); // New state for registration status
-  const nav = useNavigate();
 
   function changeNameHandle(evt) {
     setName(evt.target.value);

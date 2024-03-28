@@ -55,6 +55,7 @@ function Profile(props) {
     } else {
       setIsDisabled(true);
     }
+    // eslint-disable-next-line
   }, [name, email, curUser.name, curUser.email])
 
   return (

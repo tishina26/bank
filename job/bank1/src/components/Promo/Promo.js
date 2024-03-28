@@ -1,6 +1,5 @@
 import React from "react";
 import "./Promo.css";
-import s from '../../images/promo.svg'
 import { NavLink } from "react-router-dom";
 
 function Promo() {

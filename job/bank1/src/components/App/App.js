@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React, {useEffect, useState} from "react";
 import {Route, Routes, useNavigate} from "react-router-dom";
 import "./App.css";
@@ -8,7 +9,7 @@ import Login from "../Login/Login";
 import Info from "../Info/Info";
 import Anketa from "../Anketa/Anketa";
 import AnketaResults from "../AnketaResults/AnketaResults";
-import Preloader from "../Preloader/Preloader";
+/*import Preloader from "../Preloader/Preloader";*/
 import Usefull from "../Usefull/Usefull";
 
 import * as mainApi from "../../utils/MainApi";
@@ -19,6 +20,7 @@ import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 function App() {
   const [loggedIn, setLoggIn] = useState(false);
   const [errorOfLogin, setErrorLog] = useState("");
+  // eslint-disable-next-line
   const [isLoading, setLoad] = useState(true);
   const [currentUser, setCurUser] = useState({});
   const [errorOfRegister, setErrorReg] = useState("");

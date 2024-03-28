@@ -1,7 +1,7 @@
 .footer__dev {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 79px 70px 20px;
+    padding: 20px 70px 20px;
 }
 
 .footer__text {
@@ -11,14 +11,14 @@
     line-height: 16px;
     color: #A0A0A0;
     text-align: center;
-    border-bottom: #E8E8E8 solid 1px;
+    border-bottom: #a4a4a4 solid 1px;
     padding: 0 0 20px;
 }
 
 .footer__info {
     display: flex;
     justify-content: space-between;
-    margin: 20px 0 0;
+    margin: 15px 0 0;
 }
 
 .footer__year {

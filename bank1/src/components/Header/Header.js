@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import "./Header.css";
 import logo1 from "../../images/logo1.svg";
 import logo2 from "../../images/logo2.svg";
@@ -8,10 +9,13 @@ function Header(props) {
   return (
     <header className={`header ${props.theme}`}>
       <div className="header__dev">
-        <a href="/" className="header__button header__button_logo">
-          <img alt="Лого" src={ logo1 } className="header__logo"/>
+
+        <NavLink to="/" className='header__button header__button_logo'>
+        <img alt="Лого" src={ logo1 } className="header__logo"/>
           <img alt="Лого" src={ logo2 } className="header__logo"/>
-        </a>
+        </NavLink>
+
+
 
         {props.loggedIn ? (
           <Navigation/>

@@ -15,7 +15,7 @@ router.use(auth);
 router.use('/users', usersRouter);
 
 router.get('/anketa', getAnketa);
-router.patch('/anketa', updateAnketa);
+router.post('/anketa', updateAnketa);
 
 router.use((req, res, next) => {
   next(new NotFoundError(PAGE_NOT_FOUND));

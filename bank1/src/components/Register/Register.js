@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./Register.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo1 from "../../images/logo1.svg";
 import logo2 from "../../images/logo2.svg";
 
@@ -13,7 +13,8 @@ function Register(props) {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
-
+  const [isRegistered, setIsRegistered] = useState(false); // New state for registration status
+  const nav = useNavigate();
 
   function changeNameHandle(evt) {
     setName(evt.target.value);
@@ -36,13 +37,16 @@ function Register(props) {
 
   function changeEmailHandle(evt) {
     setEmail(evt.target.value);
-    if (evt.target.validity.valid) {
+    const parts = evt.target.value.split(".");
+    const isValid = parts.length > 1 && parts[parts.length - 1].length >= 2;
+    if (evt.target.validity.valid && isValid) {
       setEmailError("");
     } else {
-      setEmailError("Введён некорректный e-mail");
+      setEmailError("Введите корректный email");
     }
     validForm();
   }
+
 
   function handleChangePass(evt) {
     setPass(evt.target.value);
@@ -57,9 +61,10 @@ function Register(props) {
   function handleSubmit(evt) {
     evt.preventDefault();
     props.onRegister(name, email, pass);
-    setName("")
+    setName("");
     setEmail("");
     setPass("");
+    setIsRegistered(true); // Set registration status to true
   }
 
   return (
@@ -98,7 +103,7 @@ function Register(props) {
                 name="emailUser"
                 value={email || ""}
                 onChange={changeEmailHandle}
-                pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,63}$"
+
               />
               <span className="register__input-error emailUser-input-error">{ emailError }</span>
             </div>
@@ -120,6 +125,9 @@ function Register(props) {
           </fieldset>
           <div className="register__btn-error">
             <p className="register__error-text">{props.errorOfRegister}</p>
+            {isRegistered && (
+            <p className="register__success-message">Регистрация прошла успешно!</p>
+          )}
           </div>
           <button
             className="register__btn register__btn_signup"
@@ -128,6 +136,7 @@ function Register(props) {
             disabled={ isDisabled }>
             Зарегистрироваться
           </button>
+
           <h3 className="register__text-register">Уже зарегистрированы?
             <Link className="register__btn register__btn_text-register" to="/signin">Войти</Link>
           </h3>

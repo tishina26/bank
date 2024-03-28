@@ -1,63 +1,154 @@
-
-form {
-  max-width: 600px;
-  margin: 0 auto;
-  padding: 20px;
-
-  border-radius: 5px;
-  background-color: #f9f9f9;
+.anketa__form{
   margin-top: 30px;
-  margin-bottom: 30px;
+  margin-left: 50px;
+  width: 80%;
 }
-form div{
-  margin-bottom: 10px;
+.anketa__que-container{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
   margin-top: 10px;
 }
-form div label {
-  padding-bottom: 10px;
+.anketa__que{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
 }
-/* Стили для блоков вопросов */
-div.question-block {
+.anketa__que ul{
+  padding-left: 5px;
+}
+li{
+  list-style-type: none;
+}
+.anketa__ans-container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 7px;
+
+}
+.anketa__line{
+  width: 100%;
+  height: 1px;
+  background-color: rgb(42, 42, 42);
+}
+.anketa__ans-container_dop{
   margin-bottom: 20px;
 }
-
-/* Стили для вопросов */
-label.question-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-/* Стили для ответов */
-label.answer-label {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-/* Стили для кнопок */
-button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #ff7f0e;
-  color: #fff;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button[type="submit"] {
+.anketa__que_dop{
   margin-top: 20px;
 }
-button[type="submit"]:disabled {
-  background-color: #f8f8f8;
-  color: #c2c2c2;
-}
-/* Стили для итогового заключения */
-h2 {
+.anketa__save{
+  border: none;
+  background-color: #E57E46;
+  color: white;
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  margin-bottom: 20px;
   margin-top: 30px;
-  font-size: 24px;
+}
+.anketa__save:disabled{
+  border: none;
+  background-color: #ffac80;
+  color: white;
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+.anketa__conclusion-title{
+  font-size: 25px;
+  color: #8A380C;
+  font-weight: 600;
+}
+.anketa__conc-container{
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.anketa__conc-container p{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 22px;
 }
 
-p.bankruptcy-conclusion {
-  font-size: 18px;
+.anketa__conc-container li{
+  margin: 0;
+  font-size: 17px;
+  font-weight: 400;
+  list-style-type: none;
 }
+li::before {
+  color: #E57E46; /* Цвет маркера */
+  content: "•"; /* Сам маркер */
+  padding-right: 10px; /* Расстояние от маркера до текста */
+ }
+ .anketa__text{
+  margin: 0;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+ }
+ .ahketa__btns{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 200px;
+ }
+ .anketa__btn_adress{
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  width: 220px;
+  font-size: 16px;
+  background-color: #E57E46;
+  border-radius: 2px;
+  transition: 0.4s;
+ }
+ .anketa__btn_adress:hover{
+  background-color: #c5581d;
+ }
+ .anketa__btn_more{
+  padding: 10px 71px;
+  background-color: #E57E46;
+  border-radius: 2px;
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  transition: 0.4s;
+ }
+ .anketa__btn_more:hover{
+  background-color: #c5581d;
+ }
+ .anketa__register{
+  text-decoration: none;
+  cursor: pointer;
+  color: #8A380C;
+  transition: 0.4s;
+ }
+ .anketa__register:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: #d7733d;
+  transition: 0.4s;
+ }
+
+ .anketa__results{
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  width: 220px;
+  font-size: 16px;
+  background-color: #E57E46;
+  border-radius: 2px;
+  transition: 0.4s;
+  margin-top: 30px;
+  margin-bottom: 20px;
+ }
+ .anketa__results:hover{
+  background-color: #c5581d;
+ }

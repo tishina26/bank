@@ -1,27 +1,74 @@
-
-
-.anketa-results {
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  padding: 0px 20px;
-  margin-top: 0px;
+.results__container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  column-gap: 50px;
+  margin-top: 40px;
+  margin-left: 50px;
+  margin-bottom: 20px;
+  margin-right: 30px;
 }
-
-.anketa-results-heading {
+.results__header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
+.results__title{
+  margin: 0;
+  font-size: 28px;
+  font-weight: 500;
 
-.edit-anketa-button {
-  background-color: #E57E46; /* оранжевый */
+}
+.results__edit_btn{
+  text-decoration: none;
   color: black;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 2px;
   cursor: pointer;
-  margin-top: 20px;
-  transition: background-color 0.3s ease;
+  transition: 0.3s;
+  font-size: 13px;
 }
+.results__edit_btn:hover{
+  color: rgb(67, 67, 67);
+}
+.results{
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.question{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.que__title{
+  max-width: 260px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+}
+.que__title_last{
+  max-width: 400px;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
 
-.edit-anketa-button:hover {
-  background-color: #c25920; /* оранжевый, немного темнее при наведении */
+}
+.dop__list{
+  padding-left: 5px;
+  font-size: 13px;
+}
+.dop__li{
+  margin-bottom: 5px;
+  line-height: 17px;
+}
+.results__cons{
+  width: 55%;
+}
+.res__text{
+  margin: 0;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
 }

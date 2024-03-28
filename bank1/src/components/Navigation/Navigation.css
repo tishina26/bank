@@ -12,8 +12,8 @@
 }
 
 .navigation__link {
-  color: black;
-  font-size: 14px;
+  color: rgb(81, 81, 81);
+  font-size: 16px;
   font-weight: 400;
   line-height: 18px;
   text-decoration: none;
@@ -44,8 +44,8 @@
 }
 
 .navigation__profile-img {
-  width: 100px;
-  height: 32px;
+  width: 150px;
+  height: 35px;
 }
 
 

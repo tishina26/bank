@@ -9,6 +9,7 @@ import Info from "../Info/Info";
 import Anketa from "../Anketa/Anketa";
 import AnketaResults from "../AnketaResults/AnketaResults";
 import Preloader from "../Preloader/Preloader";
+import Usefull from "../Usefull/Usefull";
 
 import * as mainApi from "../../utils/MainApi";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -35,6 +36,7 @@ function App() {
               setLoggIn(true);
               nav('/');
             }
+
           });
           setErrorReg('');
         }
@@ -160,7 +162,7 @@ function App() {
             <Route path='/info' element={<Info/>}/>
             <Route path='/anketa' element={<Anketa loggedIn={loggedIn} navAnketa={navToAnketa}/>}/>
             <Route path='/anketa_result' element={<AnketaResults loggedIn={loggedIn}/>}/>
-
+            <Route path='/usefull' element={<Usefull loggedIn={loggedIn}/>}/>
           </Routes>
 
       </div>

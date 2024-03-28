@@ -35,8 +35,8 @@
 }
 
 .login__button_signin:disabled {
-    background-color: #f8f8f8;
-    color: #c2c2c2;
+    background-color: #f4f4f4;
+    color: #5f5f5f;
 }
 
 .login__button_text-register {
@@ -76,7 +76,7 @@
 }
 
 .login__input {
-    
+
     font-size: 14px;
     font-weight: 500;
     line-height: 17px;

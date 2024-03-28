@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import "./Navigation.css";
 import { NavLink } from "react-router-dom";
-import account from "../../images/logo1.svg";
+import account from "../../images/profile.svg";
 import BurgerMenu from "../BurgerMenu/BurgerMenu";
 import PopupBurger from "../PopupBurger/PopupBurger";
 
@@ -25,7 +25,7 @@ function Navigation(props) {
         <NavLink
         to="/"
         className={ setActive }>
-          Мои документы(исправить маршрут в navigation)
+          Мои документы
           </NavLink>
       </div>
       <NavLink to="/profile" className="navigation__profile">

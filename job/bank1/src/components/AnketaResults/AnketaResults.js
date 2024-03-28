@@ -21,7 +21,7 @@ const AnketaResults = (props) => {
   const additionalQuestion2 = ((anketaData.additionalQuestion2 === yes) && ('Да')) || 'Нет';
   const additionalQuestion3 = ((anketaData.additionalQuestion3 === yes) && ('Да')) || 'Нет';
   const additionalQuestion4 = ((anketaData.additionalQuestion4 === yes) && ('Да')) || 'Нет';
-  const bankruptcyConclusion = ((anketaData.bankruptcyConclusion === yes) && ('Да')) || 'Нет';
+  const bankruptcyConclusion = anketaData.bankruptcyConclusion;
 
   useEffect(() => {
     const token = localStorage.getItem("token");

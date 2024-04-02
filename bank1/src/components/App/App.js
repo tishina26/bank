@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from "react";
-import {Route, Routes, useNavigate} from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Route, Routes, useNavigate } from "react-router-dom";
 import "./App.css";
 import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
@@ -8,12 +8,12 @@ import Login from "../Login/Login";
 import Info from "../Info/Info";
 import Anketa from "../Anketa/Anketa";
 import AnketaResults from "../AnketaResults/AnketaResults";
-import Preloader from "../Preloader/Preloader";
+import Adress from "../Adress/Adress";
 import Usefull from "../Usefull/Usefull";
 
 import * as mainApi from "../../utils/MainApi";
 import PageNotFound from "../PageNotFound/PageNotFound";
-import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
 
 function App() {
@@ -25,27 +25,51 @@ function App() {
   const [resultOfEdit, setResultOfEdit] = useState("");
   const nav = useNavigate();
 
+  useEffect(() => {
+    checkAuthentication();
+  }, []);
+
+  function checkAuthentication() {
+    const token = localStorage.getItem("token");
+    if (token) {
+      mainApi
+        .checkTok(token)
+        .then((userInfo) => {
+          if (userInfo) {
+            setLoggIn(true);
+            setCurUser(userInfo);
+            setLoad(false);
+          } else {
+            handleSignOut(); // Выход из системы, если токен недействителен
+          }
+        })
+        .catch((err) => {
+          console.log(`Ошибка ${err.status}`);
+          handleSignOut(); // Обработка ошибок проверки токена
+        });
+    } else {
+      setLoad(false);
+    }
+  }
+
   function registerHandle(name, email, password) {
     setLoad(true);
-    mainApi.register(name, email, password)
+    mainApi
+      .register(name, email, password)
       .then((res) => {
         if (res.token) {
-          localStorage.setItem('token', res.token);
-          checkTok().then((loggedIn) => {
-            if (loggedIn) {
-              setLoggIn(true);
-              nav('/');
-            }
-
-          });
-          setErrorReg('');
+          localStorage.setItem("token", res.token);
+          checkAuthentication();
+          setErrorReg("");
         }
       })
       .catch((err) => {
         console.log(`Ошибка ${err.status}`);
         err.status === 409
-          ? setErrorReg('Пользователь с таким email уже существует')
-          : setErrorReg('При регистрации пользователя произошла ошибка');
+          ? setErrorReg("Пользователь с таким email уже существует")
+          : setErrorReg(
+              "При регистрации пользователя произошла ошибка"
+            );
       })
       .finally(() => setLoad(false));
   }
@@ -163,6 +187,7 @@ function App() {
             <Route path='/anketa' element={<Anketa loggedIn={loggedIn} navAnketa={navToAnketa}/>}/>
             <Route path='/anketa_result' element={<AnketaResults loggedIn={loggedIn}/>}/>
             <Route path='/usefull' element={<Usefull loggedIn={loggedIn}/>}/>
+            <Route path='/adress' element={<Adress loggedIn={loggedIn}/>}/>
           </Routes>
 
       </div>

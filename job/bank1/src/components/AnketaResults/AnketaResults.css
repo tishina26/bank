@@ -8,6 +8,14 @@
   margin-bottom: 20px;
   margin-right: 30px;
 }
+.results__con1{
+  width: 40%;
+}
+.results__conc__text div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 .results__header{
   display: flex;
   flex-direction: row;

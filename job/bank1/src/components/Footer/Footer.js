@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__dev">
-        <p className="footer__text">Сведения, предоставленные на сайте носят исключительно справочный характер</p>
+        <p className="footer__text">Сведения, предоставленные на сайте носят справочный характер</p>
         <div className="footer__info">
           <p className="footer__year">&#169; 2024</p>
           <ul className="footer__list">

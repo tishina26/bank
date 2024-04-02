@@ -8,7 +8,7 @@ function Promo() {
     <section className="promo">
       <div className="promo__dev">
         <div className="promo__info">
-          <h1 className="promo__title">Проверьте свои возможности банкротсва</h1>
+          <h1 className="promo__title">Проверьте свои возможности банкротства</h1>
           <div className="promo__block">
             <p className="promo__text">Ответьте на несколько вопросов, чтобы определить, является ли банкротство правильным решением для вас. </p>
             <NavLink to='/anketa' className='promo__button'>Перейти к анкете</NavLink>

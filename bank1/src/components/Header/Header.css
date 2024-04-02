@@ -58,7 +58,7 @@
     padding: 0;
     width: 235px;
     height: 40px;
-    align-items: flex-end;
+    align-items: flex-start;
     column-gap: 5px;
 }
 

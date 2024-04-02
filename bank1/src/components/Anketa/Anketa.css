@@ -16,11 +16,15 @@
   font-weight: 400;
   line-height: 22px;
 }
+ul{
+  padding-left: 0px;
+}
 .anketa__que ul{
   padding-left: 5px;
 }
 li{
   list-style-type: none;
+  padding-left: 20px;
 }
 .anketa__ans-container{
   display: flex;
@@ -74,12 +78,17 @@ li{
   font-weight: 400;
   line-height: 22px;
 }
+.anketa__conc-container div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 .anketa__conc-container li{
   margin: 0;
   font-size: 17px;
   font-weight: 400;
-  list-style-type: none;
+
 }
 li::before {
   color: #E57E46; /* Цвет маркера */
@@ -97,8 +106,20 @@ li::before {
   margin-bottom: 25px;
   display: flex;
   flex-direction: row;
-  column-gap: 200px;
+  justify-content: space-between;
+  color: white;
+
  }
+ .ahketa__btns a{
+  background-color: #f5f5f5;
+  color: #c5581d;
+  border: 1px solid #E57E46;
+  border-radius: 2px;
+  width: 201px;
+  height: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 10px }
  .anketa__btn_adress{
   cursor: pointer;
   border: none;
@@ -108,21 +129,26 @@ li::before {
   background-color: #E57E46;
   border-radius: 2px;
   transition: 0.4s;
+  color: white;
  }
  .anketa__btn_adress:hover{
   background-color: #c5581d;
  }
  .anketa__btn_more{
-  padding: 10px 71px;
-  background-color: #E57E46;
+  padding: 10px 10px;
+  width: 250px;
+  text-decoration: none;
+  color: white;
+
   border-radius: 2px;
   text-decoration: none;
-  color: black;
+
   cursor: pointer;
   transition: 0.4s;
  }
  .anketa__btn_more:hover{
   background-color: #c5581d;
+  color: white;
  }
  .anketa__register{
   text-decoration: none;
@@ -141,14 +167,18 @@ li::before {
   cursor: pointer;
   border: none;
   height: 40px;
-  width: 220px;
-  font-size: 16px;
-  background-color: #E57E46;
+  width: 180px;
+  font-size: 13px;
+  background-color: #f5f5f5;
+  color: #c5581d;
+  border: 1px solid #E57E46;
   border-radius: 2px;
   transition: 0.4s;
   margin-top: 30px;
   margin-bottom: 20px;
+
  }
  .anketa__results:hover{
   background-color: #c5581d;
+  color: white;
  }

@@ -2,7 +2,7 @@
   max-width: 1140px;
   min-width: 320px;
   margin: 0 auto;
-  padding: 90px 70px;
+  padding: 30px 70px;
 }
 
 .about-project__header {
@@ -15,6 +15,7 @@
   padding: 0 0 23px;
   letter-spacing: -0.04em;
   width: 100%;
+  margin-top: 30px;
 }
 .about__link{
   padding: 11px 90px;
@@ -65,4 +66,43 @@
   margin-top: 20px;
   font-weight: 600;
   margin-bottom: 5px;
+}
+
+.usefull__link{
+  text-decoration: none;
+  color: #9c552f;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.usefull__link:hover{
+  text-decoration: none;
+  color: #4e2914;
+  cursor: pointer;
+  transition: 0.3s;
+}
+*[tooltip]:hover:after {
+  position: absolute;
+  top: 45px;
+  left: 0px;
+  z-index: 1;
+  content: attr(tooltip);
+  border: #E57E46 2px solid;
+  background: linear-gradient(#d8d8d8, #ffffff,#d7d7d7) fixed;
+  padding: 5px;
+  font-size: 10px;
+  font-weight: 400;
+  width: 300px;
+  border-radius: 5px;
+}
+
+.table__text{
+  position: relative;
+}
+.text__termin{
+  color: #9c552f;
+  cursor: pointer;
+  font-weight: 400;
+}
+.text__termin::before {
+
 }

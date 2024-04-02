@@ -1,0 +1,50 @@
+/* Address.css */
+
+.ship-list {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px;
+}
+
+.ship-list__ships {
+  width: 70%;
+}
+
+.ship-list__ship {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+}
+
+.ship-list__ship span {
+  margin-right: 10px;
+}
+
+.ship-list__details {
+  margin-top: 10px;
+}
+
+.ship-list__details a {
+  color: blue;
+}
+
+.ship-list__alphabet {
+  display: flex;
+  flex-direction: row;
+}
+
+.ship-list__alphabet button {
+  margin: 5px;
+
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.ship-list__alphabet button:hover {
+  background-color: #e0e0e0;
+}

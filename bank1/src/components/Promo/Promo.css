@@ -80,24 +80,34 @@ margin: 0;
   max-width: 228px;
   padding: 11px 95px;
   background-color: #E57E46;
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 14px;
+}
+.promo__button_sps:hover{
+  background-color: #ae5220;
 }
 .promo__button{
   max-width: 228px;
   padding: 11px 57px;
   background-color: #E57E46;
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 14px;
+}
+.promo__button:hover{
+  background-color: #ae5220;
 }
 .promo__button_know{
   padding: 11px 94px;
   background-color: #E57E46;
-  color: black;
+  color: white;
   text-decoration: none;
   font-size: 14px;
+  transition: 0.3s;
+}
+.promo__button_know:hover{
+  background-color: #ae5220;
 }
 .promo__line{
   width: 100%;

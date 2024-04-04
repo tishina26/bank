@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { MY_URL } from "../../utils/constans"; // Подключаем URL вашего сервера
+import { MY_URL } from "../../utils/constans";
 import './Documents.css'
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import { NavLink } from 'react-router-dom';
 
 function Documents(props) {
   const [anketaData, setAnketaData] = useState({});
@@ -42,7 +43,7 @@ function Documents(props) {
 
   const bankruptcyConclusion = anketaData.bankruptcyConclusion;
   const docSyd = (Object.keys(bankruptcyConclusion).length > 0) &&
-    (((bankruptcyConclusion === 'HaveTo'))&& (
+    (
     /*заключение с обязанностью*/
     <>
     <div>
@@ -94,7 +95,7 @@ function Documents(props) {
     </div>
 
 
-      </>));
+      </>);
 
 const docVne = (Object.keys(bankruptcyConclusion).length > 0) &&
     (((bankruptcyConclusion === 'Both'))&& (
@@ -194,24 +195,23 @@ if (bankruptcyConclusion === 'Both') {
   return (
     <>
       <Header loggedIn={props.loggedIn} theme={"header_theme_dark"} />
-      <main className="main">
+      <main className='main'>
       {(doc === "both") && (
         <>
         <h2>Вам доступно два варианта банкротства. Необходимые документы:</h2>
-        <div>
-          <div>
+        <div className='documents-container'>
+          <div className='documents-column'>
             <h3>Документы для банкротства через суд</h3>
             {docSyd}
           </div>
-          <div>
+          <div className='documents-column'>
             <h3>Документы для банкротства во внесудебном порядке</h3>
             {docVne}
           </div>
-
         </div>
         </>
       )}
-      {(doc === "haveto") && (
+      {(doc !== "both") && (
         <>
         <h2>Вам доступно только банкротство через суд. Необходимые документы:</h2>
         <div>
@@ -219,22 +219,7 @@ if (bankruptcyConclusion === 'Both') {
         </div>
         </>
       )}
-      {(doc === "nothaveto") && (
-        <>
-        <h2>Вам доступно только банкротство через суд. Необходимые документы:</h2>
-        <div>
-          {docSyd}
-        </div>
-        </>
-      )}
-      {(doc === "less") && (
-        <>
-        <h2>Вам доступно только банкротство через суд. Необходимые документы:</h2>
-        <div>
-          {docSyd}
-        </div>
-        </>
-      )}
+      <NavLink to='/adress' className='navlink'>Найти адрес суда</NavLink>
       </main>
       <Footer />
     </>

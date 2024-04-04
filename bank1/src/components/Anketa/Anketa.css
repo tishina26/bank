@@ -111,7 +111,7 @@ li::before {
 
  }
  .ahketa__btns a{
-  background-color: #f5f5f5;
+  background-color: white;
   color: #c5581d;
   border: 1px solid #E57E46;
   border-radius: 2px;
@@ -169,7 +169,7 @@ li::before {
   height: 40px;
   width: 180px;
   font-size: 13px;
-  background-color: #f5f5f5;
+  background-color: white;
   color: #c5581d;
   border: 1px solid #E57E46;
   border-radius: 2px;

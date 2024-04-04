@@ -42,7 +42,7 @@ function Documents(props) {
 
   const bankruptcyConclusion = anketaData.bankruptcyConclusion;
   const docSyd = (Object.keys(bankruptcyConclusion).length > 0) &&
-    (((bankruptcyConclusion === 'HaveTo'))&& (
+    (
     /*заключение с обязанностью*/
     <>
     <div>
@@ -94,7 +94,7 @@ function Documents(props) {
     </div>
 
 
-      </>));
+      </>);
 
 const docVne = (Object.keys(bankruptcyConclusion).length > 0) &&
     (((bankruptcyConclusion === 'Both'))&& (
@@ -211,7 +211,7 @@ if (bankruptcyConclusion === 'Both') {
         </div>
         </>
       )}
-      {(doc === "haveto") && (
+      {(doc !== "both") && (
         <>
         <h2>Вам доступно только банкротство через суд. Необходимые документы:</h2>
         <div>
@@ -219,22 +219,7 @@ if (bankruptcyConclusion === 'Both') {
         </div>
         </>
       )}
-      {(doc === "nothaveto") && (
-        <>
-        <h2>Вам доступно только банкротство через суд. Необходимые документы:</h2>
-        <div>
-          {docSyd}
-        </div>
-        </>
-      )}
-      {(doc === "less") && (
-        <>
-        <h2>Вам доступно только банкротство через суд. Необходимые документы:</h2>
-        <div>
-          {docSyd}
-        </div>
-        </>
-      )}
+      
       </main>
       <Footer />
     </>

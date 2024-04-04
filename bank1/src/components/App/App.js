@@ -10,6 +10,7 @@ import Anketa from "../Anketa/Anketa";
 import AnketaResults from "../AnketaResults/AnketaResults";
 import Adress from "../Adress/Adress";
 import Usefull from "../Usefull/Usefull";
+import Documents from "../Documents/Documents";
 
 import * as mainApi from "../../utils/MainApi";
 import PageNotFound from "../PageNotFound/PageNotFound";
@@ -188,6 +189,7 @@ function App() {
             <Route path='/anketa_result' element={<AnketaResults loggedIn={loggedIn}/>}/>
             <Route path='/usefull' element={<Usefull loggedIn={loggedIn}/>}/>
             <Route path='/adress' element={<Adress loggedIn={loggedIn}/>}/>
+            <Route path='/documents' element={<Documents loggedIn={loggedIn}/>}/>
           </Routes>
 
       </div>

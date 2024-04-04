@@ -2,6 +2,8 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
+const fs = require('fs');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
@@ -34,6 +36,27 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.get('/', (req, res) => {
   res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
 });
+// Допустим, ваш файл находится в папке files и его имя - filename.pdf
+
+// Обработчик запроса на загрузку файла
+app.get('/files/:filename', (req, res) => {
+  // Получаем имя файла из параметров запроса
+  const filename = req.params.filename;
+  // Путь к вашему файлу
+  const filePath = path.join(__dirname, 'files', filename);
+
+  // Проверяем существование файла
+  fs.exists(filePath, (exists) => {
+    if (exists) {
+      // Отправляем файл обратно клиенту
+      res.sendFile(filePath);
+    } else {
+      // Если файл не найден, отправляем ответ с ошибкой
+      res.status(404).send('Файл не найден');
+    }
+  });
+});
+
 app.use(router);
 
 app.use(errorLogger);

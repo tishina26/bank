@@ -63,5 +63,3 @@ export function updateProfile(name, email) {
       return res;
     })
 }
-
-

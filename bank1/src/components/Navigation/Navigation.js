@@ -23,7 +23,7 @@ function Navigation(props) {
       <div className="navigation__links">
         <NavLink to="/anketa" className={ setActive }>Анкета</NavLink>
         <NavLink
-        to="/"
+        to="/documents"
         className={ setActive }>
           Мои документы
           </NavLink>

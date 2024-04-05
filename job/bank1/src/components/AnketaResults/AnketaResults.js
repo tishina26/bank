@@ -41,18 +41,6 @@ const AnketaResults = (props) => {
     .then(data => {
       setAnketaData(data); // Установка данных анкеты в состояние
       setLoading(false);
-      // if (Object.keys(data).length > 0) {
-      //   setAnketaData(data); // Установка данных анкеты в состояние
-      //   setLoading(false);
-      // } else {
-      //   data = {'debtAmount':''};
-      //   setAnketaData(data); // Установка данных анкеты в состояние
-      //   setLoading(false);
-      //   return (<div>
-      //       Пожалуйста, сначала пройдите анкету. Тогда результаты сохранятся и будут доступны в личном кабинете.
-      //       <NavLink to="/anketa" >Анкета</NavLink>
-      //   </div>);
-      // }
     })
     .catch(error => {
       console.log('Fetch Error :-S', error);

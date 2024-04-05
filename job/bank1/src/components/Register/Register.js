@@ -16,6 +16,7 @@ function Register(props) {
   const [isRegistered, setIsRegistered] = useState(false); // New state for registration status
   const nav = useNavigate();
 
+
   function changeNameHandle(evt) {
     setName(evt.target.value);
     if (evt.target.validity.valid) {

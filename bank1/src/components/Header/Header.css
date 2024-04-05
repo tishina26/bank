@@ -51,7 +51,13 @@
     color: black;
     background-color: #E57E46;
 }
-
+.header__btns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 50%;
+  align-items: center;
+}
 .header__button_logo {
     display: flex;
     flex-direction: row;

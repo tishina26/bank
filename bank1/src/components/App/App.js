@@ -5,7 +5,6 @@ import Main from "../Main/Main";
 import Profile from "../Profile/Profile";
 import Register from "../Register/Register";
 import Login from "../Login/Login";
-import Info from "../Info/Info";
 import Anketa from "../Anketa/Anketa";
 import AnketaResults from "../AnketaResults/AnketaResults";
 import Adress from "../Adress/Adress";
@@ -184,7 +183,7 @@ function App() {
           {loggedIn ? <Route path='*' element={<PageNotFound />} /> : <Route path='/signin' element={<Login name="Виталий"
                   email="pochta@yandex.ru" onLogin={loginHandle} errorOfLogin={errorOfLogin} />} />}
             <Route path="*" element={<PageNotFound/>}/>
-            <Route path='/info' element={<Info/>}/>
+
             <Route path='/anketa' element={<Anketa loggedIn={loggedIn} navAnketa={navToAnketa}/>}/>
             <Route path='/anketa_result' element={<AnketaResults loggedIn={loggedIn}/>}/>
             <Route path='/usefull' element={<Usefull loggedIn={loggedIn}/>}/>

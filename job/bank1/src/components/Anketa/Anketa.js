@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Header from '../Header/Header';
 import './Anketa.css'
 import { NavLink } from 'react-router-dom';
+import Footer from '../Footer/Footer';
 
 const Anketa = (props) => {
   const [debtAmount, setDebtAmount] = useState('');
@@ -181,7 +182,7 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(conclusion).length > 0) 
 let link = ''
   /*теперь выберем нужный нам вариант*/
   if (conclusion === Both) {
-    link = '/usefull#vne'
+    link = '/usefull'
     setBlock_of_bankruptcyConclusion(block_of_bankruptcyConclusion_Both);
     setLinkTo(link)
   } else if (conclusion === HaveTo) {
@@ -190,11 +191,11 @@ let link = ''
     setLinkTo(link)
   } else if (conclusion === NotHaveTo){
     setBlock_of_bankruptcyConclusion(block_of_bankruptcyConclusion_NotHaveTo);
-    link = '/usefull#vne'
+    link = '/usefull#syd'
     setLinkTo(link)
   } else{
   setBlock_of_bankruptcyConclusion(block_of_bankruptcyConclusion_Less);
-  link = '/usefull#vne'
+  link = '/usefull#syd'
   setLinkTo(link)
 }
 };
@@ -204,6 +205,7 @@ let link = ''
   return (
     <div>
        <Header loggedIn={props.loggedIn} theme={"header_theme_dark"}/>
+       <main className="main">
       <form className='anketa__form' onSubmit={handleSubmit}>
       {!isFinished && (
         <>
@@ -432,23 +434,33 @@ let link = ''
 
           {isFinished && (
             <div>
-
+              <div className='anketa__res_title'>
               <h2 className='anketa__conclusion-title' >Итоговое заключение</h2>
-              <div className='anketa__conc-container'>{block_of_bankruptcyConclusion}</div>
-              <div className='ahketa__btns'>
-
-                <a className='results__more' href={linkTo}>Подробнее о вашей процедуре</a>
-                <a className='results__doc' href='/documents'>Перейти к документам</a>
+              <a className='anketa__back' href='/anketa'>Назад</a>
               </div>
+
+              <div className='anketa__conc-container'>{block_of_bankruptcyConclusion}</div>
+
               {props.loggedIn ? (
                 <>
+                <div className='ahketa__btns'>
+
+<a className='results__more' href={linkTo}>Подробнее о вашей процедуре</a>
+<a className='results__doc' href='/documents'>Перейти к документам</a>
+</div>
                 <p className='anketa__text'>Для того, чтобы всё сделать грамотно, Вам необходимо правильно оформить все документы. Воспользуйтесь составленными нами шаблонами заявления о признании Вас банкротом и полным пакетом документов, необходимых к подаче вместе с ним.</p>
                 <button className='anketa__results' onClick={props.navAnketa}>Сохраненные результаты</button>
                 </>
             ):(
+              <>
+              <div className='ahketa__btns'>
+
+              <a className='results__more' href={linkTo}>Подробнее о вашей процедуре</a>
+
+            </div>
 
           <p className='anketa__text'>Для того, чтобы всё сделать грамотно, Вам необходимо правильно оформить все документы. <a href='signup' className='anketa__register'>Зарегистрируйтесь</a> и воспользуйтесь составленными нами шаблонами заявления о признании Вас банкротом и полным пакетом документов, необходимых к подаче вместе с ним.</p>
-
+          </>
         )}
 
 
@@ -459,7 +471,10 @@ let link = ''
             <button className='anketa__save' type="submit" disabled={anketaEnded()}>Далее</button>
           )}
         </form>
+        </main>
+        <Footer/>
       </div>
+
     );
   };
 

@@ -13,3 +13,6 @@
 fieldset {
     border:0 none;
 }
+.main{
+  min-height: calc(100vh - 220px);
+}

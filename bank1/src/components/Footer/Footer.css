@@ -1,7 +1,7 @@
 .footer__dev {
     max-width: 1140px;
     margin: 0 auto;
-    padding: 20px 70px 20px;
+    padding: 20px 40px 10px;
 }
 
 .footer__text {
@@ -11,11 +11,13 @@
     line-height: 16px;
     color: #A0A0A0;
     text-align: center;
-    border-bottom: #a4a4a4 solid 1px;
+
     padding: 0 0 20px;
 }
 
 .footer__info {
+  padding-top: 20px;
+  border-top: #a4a4a4 solid 1px;
     display: flex;
     justify-content: space-between;
     margin: 15px 0 0;

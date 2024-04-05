@@ -1,15 +1,35 @@
-/* Address.css */
+.background1 {
+  background-image: url("../../images/plus.svg");
+  background-color: transparent;
+  width: 23px;
+  height: 23px;
+  border: none;
+  background-size: cover;
 
+}
+
+.background2 {
+  background-image: url("../../images/minus.svg");
+
+  background-color: transparent;
+  width: 23px;
+  height: 23px;
+  border: none;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
 .ship-list {
   display: flex;
   flex-direction: column-reverse;
   justify-content: space-between;
   align-items: flex-start;
   margin: 20px;
+  margin-left: 35px;
 }
 
 .ship-list__ships {
   width: 70%;
+
 }
 
 .ship-list__ship {
@@ -22,11 +42,13 @@
 
 .ship-list__ship span {
   margin-right: 10px;
+  width: 30%;
 }
 
 .ship-list__details {
   margin-top: 10px;
   font-size: 13px;
+  width: 40%;
 }
 
 .ship-list__details a {

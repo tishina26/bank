@@ -2,6 +2,7 @@ import React, {useContext, useState, useRef, useEffect} from "react";
 import "./Profile.css";
 import Header from "../Header/Header";
 import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+import Footer from "../Footer/Footer";
 
 function Profile(props) {
   const ref = useRef();
@@ -60,6 +61,7 @@ function Profile(props) {
   return (
     <>
       <Header theme={"header_theme_dark"} loggedIn={props.loggedIn}/>
+      <main className="main">
       <main className="profile">
         <div className="profile__dev">
           <form className="profile__form" noValidate ref={ref} onSubmit={handleSubmit}>
@@ -121,6 +123,8 @@ function Profile(props) {
           </form>
         </div>
       </main>
+      </main>
+      <Footer/>
     </>
   );
 }

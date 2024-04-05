@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../Header/Header';
 import { NavLink } from 'react-router-dom';
 import './AnketaResults.css'
+import Footer from '../Footer/Footer';
 
 const AnketaResults = (props) => {
   const [anketaData, setAnketaData] = useState({});
@@ -207,16 +208,16 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(bankruptcyConclusion).le
   let linkDocs = '/documents';
   if (bankruptcyConclusion === 'Both') {
     block_of_bankruptcyConclusion = block_of_bankruptcyConclusion_Both;
-    linkMore = '/usefull#vne'
+    linkMore = '/usefull'
   } else if (bankruptcyConclusion === 'HaveTo') {
     block_of_bankruptcyConclusion = block_of_bankruptcyConclusion_HaveTo;
     linkMore = '/usefull#syd'
   } else if (bankruptcyConclusion === 'NotHaveTo') {
     block_of_bankruptcyConclusion = block_of_bankruptcyConclusion_NotHaveTo;
-    linkMore = '/usefull#vne'
+    linkMore = '/usefull#syd'
   } else {
     block_of_bankruptcyConclusion = block_of_bankruptcyConclusion_Less;
-    linkMore = '/usefull#vne'
+    linkMore = '/usefull#syd'
   }
 
   /*проверка, была ли анкета хоть раз пройдена*/
@@ -224,18 +225,22 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(bankruptcyConclusion).le
     return (
     <div>
       <Header loggedIn={props.loggedIn} theme={"header_theme_light"} />
+      <main className="main">
       <h2 className="profile__title">Результаты анкеты</h2>
       <div className="results">
         <div className="question">
           <h3>Вы еще не прошли анкету</h3>
         </div>
       </div>
+      </main>
+      <Footer/>
     </div>
   )}
 
   return (
     <div>
       <Header loggedIn={props.loggedIn} theme={"header_theme_dark"} />
+      <main className="main">
       <div className='results__container'>
         <div className='results__con1'>
           <div className='results__header'>
@@ -276,6 +281,8 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(bankruptcyConclusion).le
 
 
     </div>
+    </main>
+    <Footer/>
     </div>
   );
 };

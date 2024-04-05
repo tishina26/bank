@@ -106,3 +106,21 @@
 .text__termin::before {
 
 }
+.usefull__anketa{
+  color:#E57E46;
+  border: 1px solid #E57E46;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-decoration: none;
+  margin: 0 16px 0 0;
+  transition: .3s;
+  border-radius: 2px;
+}
+
+
+.usefull__anketa:hover {
+  background-color: #E57E46;
+  color: white;
+}

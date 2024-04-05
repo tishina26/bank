@@ -196,12 +196,18 @@ function Documents(props) {
           <div className='documents-column'>
             <h3>Документы для банкротства через суд</h3>
             {docSyd}
+            <a className='doc__more' href='/usefull#syd'>Подробнее о вашей процедуре</a>
+            <NavLink to='/adress' className='navlink'>Найти адрес суда</NavLink>
           </div>
           <div className='documents-column'>
             <h3>Документы для банкротства во внесудебном порядке</h3>
+
             {docVne}
+            <a className='doc__more' href='/usefull#vne'>Подробнее о вашей процедуре</a>
+            <p>Заявление подается в МФЦ по месту жительства или месту пребывания гражданина</p>
           </div>
         </div>
+
         </>
       )}
       {(doc !== "both") && (
@@ -209,10 +215,12 @@ function Documents(props) {
         <h2>Вам доступно только банкротство через суд. Необходимые документы:</h2>
         <div>
           {docSyd}
+          <a className='doc__more' href='/usefull#syd'>Подробнее о вашей процедуре</a>
+          <NavLink to='/adress' className='navlink'>Найти адрес суда</NavLink>
         </div>
         </>
       )}
-      <NavLink to='/adress' className='navlink'>Найти адрес суда</NavLink>
+
       </main>
       <Footer />
     </>

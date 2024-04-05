@@ -27,6 +27,24 @@ h3 {
   transition: 0.3s;
 }
 
+.doc__more{
+  background-color: white;
+  margin-top: 20px;
+  color: #E57E46;
+  border: 1px solid #E57E46;
+  border-radius: 2px;
+  width: 201px;
+  height: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 5px;
+  transition: 0.3s;
+  display: block;
+}
+.doc__more:hover{
+  background-color: #E57E46;
+  color: white;
+ }
 .documents__btn:hover {
   background-color: #E57E46;
   color: white;
@@ -49,6 +67,7 @@ li button {
 
 .documents-column {
   width: 48%;
+  height: auto;
 }
 
 /* Optional: adjust styling for NavLink */

@@ -1,11 +1,14 @@
 import React from "react";
 import "./Usefull.css";
 import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
+import { NavLink } from "react-router-dom";
 
 function Usefull(props) {
   return (
     <div>
     <Header loggedIn={props.loggedIn} theme={"header_theme_dark"} />
+    <main className='main'>
     <section className="about-project">
       <div className="about-project__dev">
         <h2 className="about-project__header">Что такое банкротство?</h2>
@@ -101,6 +104,9 @@ function Usefull(props) {
                 <li className="usefull_li">Проверка заявления в МФЦ всем требованиям в течение 6 месяцев</li>
                 <li className="usefull_li">МФЦ включает в Единый федеральный реестр сведений о банкротстве информацию о завершении процедуры. С этого момента гражданин освобождается от обязательств перед кредиторами в размере суммы, указанной в заявлении</li>
 
+                <h3>Чтобы узнать, какая вам доступна процедура, пожалуйста, пройдите нашу анкету</h3>
+                <NavLink to="/anketa" className='usefull__anketa'>Пройти анкету</NavLink>
+
 
 
 
@@ -109,6 +115,8 @@ function Usefull(props) {
 
       </div>
     </section>
+    </main>
+    <Footer/>
     </div>
   );
 }

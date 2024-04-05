@@ -195,16 +195,38 @@ li::before {
   background-color: #c5581d;
   color: white;
  }
+ .anketa__res_title{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  column-gap: 30px;
+  align-items:center;
+ }
+ .anketa__back{
+  height: 20px;
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px solid black;
+
+  text-decoration: none;
+  color: #000000;
+  transition: 0.3s;
+  font-size: 15px;
+ }
+ .anketa__back:hover{
+
+  color: #9f9f9f;
+ }
  .anketa__register{
   text-decoration: none;
   cursor: pointer;
-  color: #8A380C;
+  color: #bd4d10;
   transition: 0.4s;
  }
  .anketa__register:hover{
   text-decoration: none;
   cursor: pointer;
-  color: #d7733d;
+  color: #98461a;
   transition: 0.4s;
  }
 

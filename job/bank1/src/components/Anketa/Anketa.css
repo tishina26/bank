@@ -110,7 +110,7 @@ li::before {
   color: white;
 
  }
- .ahketa__btns a{
+ .results__more {
   background-color: white;
   color: #c5581d;
   border: 1px solid #E57E46;
@@ -119,7 +119,13 @@ li::before {
   height: 20px;
   text-decoration: none;
   font-size: 13px;
-  padding: 10px }
+  padding: 10px;
+  transition: 0.3s
+ }
+ .results__more:hover{
+  background-color: #E57E46;
+  color: white;
+ }
  .anketa__btn_adress{
   cursor: pointer;
   border: none;
@@ -131,14 +137,53 @@ li::before {
   transition: 0.4s;
   color: white;
  }
+ .anketa__btn_more{
+  background-color: white;
+  color: #c5581d;
+  border: 1px solid #E57E46;
+  border-radius: 2px;
+  width: 201px;
+  height: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 10px
+ }
+ .results__doc{
+  background-color: white;
+  color: #c5581d;
+  border: 1px solid #E57E46;
+  border-radius: 2px;
+  width: 250px;
+  height: 20px;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 10px;
+  transition: 0.3s;
+}
+.results__doc:hover{
+  background-color: #E57E46;
+  color: white;
+}
+ .anketa__btn_adress{
+  cursor: pointer;
+  border: none;
+  height: 40px;
+  width: 175px;
+  font-size: 16px;
+  background-color: #E57E46;
+  border-radius: 2px;
+  transition: 0.4s;
+  color: white;
+ }
+
  .anketa__btn_adress:hover{
   background-color: #c5581d;
  }
  .anketa__btn_more{
   padding: 10px 10px;
-  width: 250px;
+  width: 205px;
   text-decoration: none;
-  color: white;
+
 
   border-radius: 2px;
   text-decoration: none;

@@ -41,113 +41,106 @@ function Documents(props) {
     return <div>Loading...</div>;
   }
 
+  const documentNamesSyd = [
+    {id: 1, text: 'Заявление гражданина о признании его банкротом через суд', file: 'Заявление_гр_о_пр_банк_ч_суд'},
+    {id: 2, text: 'Опись имущества гражданина', file: 'опись_имущ_граж'},
+    {id: 3, text: 'Список кредиторов и должников гражданина', file: 'список_кредиторов'},
+  ];
+  const documentNamesVne = [
+    {id: 1, text: 'Заявление гражданина о признании его банкротом во внесудебном порядке', file: 'Заявление_гр_о_пр_банк_вне'},
+    {id: 2, text: 'Список кредиторов и должников гражданина', file: 'список_кредиторов_вне.pdf'},
+  ];
+
+  function docs(docArr) {
+    return documentNamesSyd.map(doc => (
+    <div key={doc.id}>
+          <li>
+            {doc.text}{" "}
+            <ul><li>Пустой шаблон
+            <button
+              className="documents__btn"
+              onClick={() => handleDownload(doc.file+'.docx')}
+            >
+              Скачать
+            </button></li>
+            <li>Пример заполнения
+            <button
+              className="documents__btn"
+              onClick={() => handleDownload(doc.file+'.pdf')}
+            >
+              Скачать
+            </button>
+            <button
+              className="documents__btn"
+              onClick={() => handlePreview(doc.file+'.pdf')}
+            >
+              Предпросмотр
+            </button></li></ul>
+          </li>
+    </div>
+  ))};
+
+
   const bankruptcyConclusion = anketaData.bankruptcyConclusion;
+
   const docSyd = (Object.keys(bankruptcyConclusion).length > 0) &&
-    (
-    /*заключение с обязанностью*/
-    <>
-    <div>
-    <li>
-            Заявление гражданина о признании его банкротом через суд{" "}
+    (<><div>{docs(documentNamesSyd)}
             <button
               className="documents__btn"
-              onClick={() => handleDownload("Заявление_гр_о_пр_банк_ч_суд.docx")}
+              onClick={() => handleDownload("весь_архив_суд.zip")}
             >
-              Скачать
+              Скачать весь архив
             </button>
             <button
               className="documents__btn"
-              onClick={() => handlePreview("Заявление_гр_о_пр_банк_ч_суд.pdf")}
+              onClick={() => handleDownload("все_шаблоны_суд.zip")}
             >
-              Предпросмотр
-            </button>
-          </li>
-          <li>
-            Опись имущества гражданина{" "}
-            <button
-              className="documents__btn"
-              onClick={() => handleDownload("опись_имущ_граж.docx")}
-            >
-              Скачать
+              Скачать все шаблоны
             </button>
             <button
               className="documents__btn"
-              onClick={() => handlePreview("опись_имущ_граж.pdf")}
+              onClick={() => handleDownload("все_примеры_суд.zip")}
             >
-              Предпросмотр
+              Скачать все примеры
             </button>
-          </li>
-          <li>
-            Список кредиторов и должников гражданина{" "}
+
+    </div></>);
+  const docVne = (Object.keys(bankruptcyConclusion).length > 0) &&
+    (bankruptcyConclusion === 'Both') &&
+    (<><div>{docs(documentNamesVne)}
+
             <button
               className="documents__btn"
-              onClick={() => handleDownload("список_кредиторов.docx")}
+              onClick={() => handleDownload("весь_архив_вне.zip")}
             >
-              Скачать
+              Скачать весь архив
             </button>
             <button
               className="documents__btn"
-              onClick={() => handlePreview("список_кредиторов.pdf")}
+              onClick={() => handleDownload("все_шаблоны_вне.zip")}
             >
-              Предпросмотр
+              Скачать все шаблоны
             </button>
-          </li>
-    </div>
+            <button
+              className="documents__btn"
+              onClick={() => handleDownload("все_примеры_вне.zip")}
+            >
+              Скачать все примеры
+            </button>
 
 
-      </>);
+    </div></>);
 
-const docVne = (Object.keys(bankruptcyConclusion).length > 0) &&
-    (((bankruptcyConclusion === 'Both'))&& (
-    /*заключение с обязанностью*/
-    <>
-    <div>
-    <li>
-    Заявление гражданина о признании его банкротом во внесудебном порядке{" "}
-            <button
-              className="documents__btn"
-              onClick={() => handleDownload("Заявление_гр_о_пр_банк_вне.docx")}
-            >
-              Скачать
-            </button>
-            <button
-              className="documents__btn"
-              onClick={() => handlePreview("Заявление_гр_о_пр_банк_вне.pdf")}
-            >
-              Предпросмотр
-            </button>
-          </li>
-
-          <li>
-            Список кредиторов и должников гражданина{" "}
-            <button
-              className="documents__btn"
-              onClick={() => handleDownload("список_кредиторов_вне.docx")}
-            >
-              Скачать
-            </button>
-            <button
-              className="documents__btn"
-              onClick={() => handlePreview("список_кредиторов_вне.pdf")}
-            >
-              Предпросмотр
-            </button>
-          </li>
-    </div>
-
-
-      </>));
-
-let doc = 'def';
-if (bankruptcyConclusion === 'Both') {
-  doc = 'both';
-} else if (bankruptcyConclusion === 'HaveTo') {
-  doc = 'haveto';
-} else if (bankruptcyConclusion === 'NotHaveTo') {
-  doc = 'nothaveto';
-} else {
-  doc = 'less';
-}
+  let doc = 'def';
+  if (bankruptcyConclusion === 'Both') {
+    doc = 'both';
+  } else if (bankruptcyConclusion === 'HaveTo') {
+    doc = 'haveto';
+  } else if (bankruptcyConclusion === 'NotHaveTo') {
+    doc = 'nothaveto';
+  } else {
+    doc = 'less';
+  }
 
 
   const handleDownload = (filename) => {

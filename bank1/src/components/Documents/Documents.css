@@ -16,17 +16,21 @@ h3 {
 
 .documents__btn {
   margin-right: 10px;
-  background-color: #E57E46;
-  color: white;
+  background-color: transparent;
+  color: #E57E46;
   border: none;
+  text-decoration: underline;
   padding: 5px 10px;
   cursor: pointer;
   border-radius: 3px;
   margin-left: 10px;
+  transition: 0.3s;
 }
 
 .documents__btn:hover {
-  background-color: #b25f35;
+  background-color: #E57E46;
+  color: white;
+  text-decoration: none;
 }
 
 li {
@@ -60,7 +64,7 @@ li button {
 }
 
 .navlink:hover {
-  border: none;
+
   color: white;
   background-color: #E57E46;
 }

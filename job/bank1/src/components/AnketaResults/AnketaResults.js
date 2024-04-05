@@ -203,19 +203,20 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(bankruptcyConclusion).le
       </>));
   /*теперь выберем нужный нам вариант*/
   let block_of_bankruptcyConclusion = 'def';
-  let link = ''
+  let linkMore = '';
+  let linkDocs = '/documents';
   if (bankruptcyConclusion === 'Both') {
     block_of_bankruptcyConclusion = block_of_bankruptcyConclusion_Both;
-    link = '/usefull#vne'
+    linkMore = '/usefull#vne'
   } else if (bankruptcyConclusion === 'HaveTo') {
     block_of_bankruptcyConclusion = block_of_bankruptcyConclusion_HaveTo;
-    link = '/usefull#syd'
+    linkMore = '/usefull#syd'
   } else if (bankruptcyConclusion === 'NotHaveTo') {
     block_of_bankruptcyConclusion = block_of_bankruptcyConclusion_NotHaveTo;
-    link = '/usefull#vne'
+    linkMore = '/usefull#vne'
   } else {
     block_of_bankruptcyConclusion = block_of_bankruptcyConclusion_Less;
-    link = '/usefull#vne'
+    linkMore = '/usefull#vne'
   }
 
   /*проверка, была ли анкета хоть раз пройдена*/
@@ -265,10 +266,8 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(bankruptcyConclusion).le
             {block_of_bankruptcyConclusion}
           </div>
           <div className='ahketa__btns'>
-
-
-
-                <a href={link}>Подробнее о вашей процедуре</a>
+                <a className='results__more' href={linkMore}>Подробнее о вашей процедуре</a>
+                <a className='results__doc' href={linkDocs}>Перейти к документам</a>
               </div>
               <p className='res__text'>Для того, чтобы всё сделать грамотно, Вам необходимо правильно оформить все документы. Воспользуйтесь составленными нами шаблонами заявления о признании Вас банкротом и полным пакетом документов, необходимых к подаче вместе с ним.</p>
 

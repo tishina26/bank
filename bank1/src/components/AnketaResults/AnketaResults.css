@@ -11,6 +11,9 @@
 .results__con1{
   width: 40%;
 }
+.results__doc{
+  width: 150px;
+ }
 .results__conc__text div{
   display: flex;
   flex-direction: row;

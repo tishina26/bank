@@ -437,7 +437,8 @@ let link = ''
               <div className='anketa__conc-container'>{block_of_bankruptcyConclusion}</div>
               <div className='ahketa__btns'>
 
-                <a className='anketa__btn_more' href={linkTo}>Подробнее о вашей процедуре</a>
+                <a className='results__more' href={linkTo}>Подробнее о вашей процедуре</a>
+                <a className='results__doc' href='/documents'>Перейти к документам</a>
               </div>
               {props.loggedIn ? (
                 <>

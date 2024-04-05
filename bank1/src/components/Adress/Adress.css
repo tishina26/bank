@@ -26,6 +26,7 @@
 
 .ship-list__details {
   margin-top: 10px;
+  font-size: 13px;
 }
 
 .ship-list__details a {
@@ -51,3 +52,34 @@
 /* Adress.module.css */
 
 /* Стили для формы поиска */
+.form {
+  margin-top: 20px; /* Регулирует отступ сверху */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 90%;
+  column-gap: 10px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.form span{
+  width: 240px;
+  display: block;
+}
+.form label {
+
+  margin-bottom: 5px; /* Отступ снизу */
+}
+
+.form input[type="text"] {
+  width: 100%; /* Занимает всю доступную ширину */
+  padding: 10px; /* Внутренние отступы */
+  border: 1px solid #ccc; /* Граница поля */
+  border-radius: 5px; /* Скругление углов */
+  font-size: 16px; /* Размер шрифта */
+}
+
+.form input[type="text"]:focus {
+  outline: none; /* Убирает рамку фокуса */
+  border-color: #007bff; /* Цвет границы при фокусе */
+}

@@ -48,7 +48,7 @@ function Documents(props) {
   ];
   const documentNamesVne = [
     {id: 1, text: 'Заявление гражданина о признании его банкротом во внесудебном порядке', file: 'Заявление_гр_о_пр_банк_вне'},
-    {id: 2, text: 'Список кредиторов и должников гражданина', file: 'список_кредиторов_вне.pdf'},
+    {id: 2, text: 'Список кредиторов и должников гражданина', file: 'список_кредиторов_вне'},
   ];
 
   function docs(docArr) {
@@ -62,7 +62,14 @@ function Documents(props) {
               onClick={() => handleDownload(doc.file+'.docx')}
             >
               Скачать
-            </button></li>
+            </button>
+            <button
+              className="documents__btn"
+              onClick={() => handlePreview(doc.file+'_шаблон.pdf')}
+            >
+              Предпросмотр
+            </button>
+            </li>
             <li>Пример заполнения
             <button
               className="documents__btn"
@@ -81,7 +88,7 @@ function Documents(props) {
   ))};
 
 
-  const bankruptcyConclusion = anketaData.bankruptcyConclusion;
+  const bankruptcyConclusion = (Object.keys(anketaData).length > 0) && (anketaData.bankruptcyConclusion);
 
   const docSyd = (Object.keys(bankruptcyConclusion).length > 0) &&
     (<><div>{docs(documentNamesSyd)}
@@ -184,6 +191,22 @@ function Documents(props) {
     // Функция для открытия предпросмотра документа
     window.open(`${MY_URL}/files/${filename}`, '_blank');
   };
+
+  /*проверка, была ли анкета хоть раз пройдена*/
+  if (Object.keys(anketaData).length === 0) {
+    return (
+    <div>
+      <Header loggedIn={props.loggedIn} theme={"header_theme_dark"} />
+      <main className="main">
+      <h2 className="profile__title">НЕТ РЕЗУЛЬТАТОВ</h2>
+        <div>
+          Вы еще не прошли анкету. Пожалуйста, сначала пройдите ее, тогда появятся результаты и соответствующие им документы.
+          <div><NavLink to="/anketa" className='navlink' >Пройти анкету</NavLink></div>
+      </div>
+      </main>
+      <Footer/>
+    </div>
+  )}
 
   return (
     <>

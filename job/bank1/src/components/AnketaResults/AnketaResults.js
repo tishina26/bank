@@ -41,6 +41,18 @@ const AnketaResults = (props) => {
     .then(data => {
       setAnketaData(data); // Установка данных анкеты в состояние
       setLoading(false);
+      // if (Object.keys(data).length > 0) {
+      //   setAnketaData(data); // Установка данных анкеты в состояние
+      //   setLoading(false);
+      // } else {
+      //   data = {'debtAmount':''};
+      //   setAnketaData(data); // Установка данных анкеты в состояние
+      //   setLoading(false);
+      //   return (<div>
+      //       Пожалуйста, сначала пройдите анкету. Тогда результаты сохранятся и будут доступны в личном кабинете.
+      //       <NavLink to="/anketa" >Анкета</NavLink>
+      //   </div>);
+      // }
     })
     .catch(error => {
       console.log('Fetch Error :-S', error);
@@ -51,7 +63,7 @@ const AnketaResults = (props) => {
     return <div>Loading...</div>;
   }
 
-  const block_of_debtAmount = (Object.keys(anketaData.debtAmount).length > 0) && (
+  const block_of_debtAmount = (Object.keys(anketaData).length > 0) && (Object.keys(anketaData.debtAmount).length > 0) && (
     <>
     <div className="question">
       <h3 className='que__title'>Сумма задолженности</h3>
@@ -60,7 +72,7 @@ const AnketaResults = (props) => {
     <div className='anketa__line'></div>
     </>
   );
-  const block_of_payDelay = (Object.keys(anketaData.payDelay).length > 0) && (
+  const block_of_payDelay = (Object.keys(anketaData).length > 0) && (Object.keys(anketaData.payDelay).length > 0) && (
     <>
     <div className="question">
       <h3 className='que__title'>Вы не платите по своим долгам больше 3 месяцев?</h3>
@@ -69,7 +81,7 @@ const AnketaResults = (props) => {
     <div className='anketa__line'></div>
     </>
   );
-  const block_of_payToOneCreditor = (Object.keys(anketaData.payToOneCreditor).length > 0) && (
+  const block_of_payToOneCreditor = (Object.keys(anketaData).length > 0) && (Object.keys(anketaData.payToOneCreditor).length > 0) && (
     <>
     <div className="question">
       <h3 className='que__title'>Если Вы заплатите весь долг одному из своих кредиторов, то не сможете заплатить другим?</h3>
@@ -78,7 +90,7 @@ const AnketaResults = (props) => {
     <div className='anketa__line'></div>
     </>
   );
-  const block_of_additionalQuestion1 = (Object.keys(anketaData.additionalQuestion1).length > 0) && (
+  const block_of_additionalQuestion1 = (Object.keys(anketaData).length > 0) && (Object.keys(anketaData.additionalQuestion1).length > 0) && (
     <>
     <div className='dop'>
     <div className="question">
@@ -94,7 +106,7 @@ const AnketaResults = (props) => {
     <div className='anketa__line'></div>
     </>
   );
-  const block_of_additionalQuestion2 = (Object.keys(anketaData.additionalQuestion2).length > 0) && (
+  const block_of_additionalQuestion2 = (Object.keys(anketaData).length > 0) && (Object.keys(anketaData.additionalQuestion2).length > 0) && (
     <>
     <div className='dop'>
     <div className="question">
@@ -109,7 +121,7 @@ const AnketaResults = (props) => {
     <div className='anketa__line'></div>
     </>
   );
-  const block_of_additionalQuestion3 = (Object.keys(anketaData.additionalQuestion3).length > 0) && (
+  const block_of_additionalQuestion3 = (Object.keys(anketaData).length > 0) && (Object.keys(anketaData.additionalQuestion3).length > 0) && (
     <>
     <div className='dop'>
     <div className="question">
@@ -124,7 +136,7 @@ const AnketaResults = (props) => {
     <div className='anketa__line'></div>
     </>
   );
-  const block_of_additionalQuestion4 = (Object.keys(anketaData.additionalQuestion4).length > 0) && (
+  const block_of_additionalQuestion4 = (Object.keys(anketaData).length > 0) && (Object.keys(anketaData.additionalQuestion4).length > 0) && (
     <>
     <div className="question">
       <h3 className='que__title_last'>У Вас есть выданный не позднее чем 7 лет назад документ имущественного характера, который предъявлялся к исполнению (направлялся для исполнения), и данные требования не исполнены или исполнены частично?</h3>
@@ -135,7 +147,7 @@ const AnketaResults = (props) => {
   );
 
   /*длинные блоки заключений*/
-  const bankruptcyConclusion = anketaData.bankruptcyConclusion;
+  const bankruptcyConclusion = (Object.keys(anketaData).length > 0) && (anketaData.bankruptcyConclusion);
   const block_of_bankruptcyConclusion_HaveTo = (Object.keys(bankruptcyConclusion).length > 0) &&
     (((bankruptcyConclusion === 'HaveTo') ||bankruptcyConclusion === 'Both')&& (
     /*заключение с обязанностью*/
@@ -224,13 +236,12 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(bankruptcyConclusion).le
   if (Object.keys(anketaData).length === 0) {
     return (
     <div>
-      <Header loggedIn={props.loggedIn} theme={"header_theme_light"} />
+      <Header loggedIn={props.loggedIn} theme={"header_theme_dark"} />
       <main className="main">
-      <h2 className="profile__title">Результаты анкеты</h2>
-      <div className="results">
-        <div className="question">
-          <h3>Вы еще не прошли анкету</h3>
-        </div>
+      <h2 className="profile__title">НЕТ РЕЗУЛЬТАТОВ</h2>
+        <div>
+          Вы еще не прошли анкету. Пожалуйста, сначала пройдите ее, тогда результаты сохранятся и будут доступны в личном кабинете.
+          <div><NavLink to="/anketa" className='navlink' >Пройти анкету</NavLink></div>
       </div>
       </main>
       <Footer/>
@@ -248,21 +259,13 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(bankruptcyConclusion).le
             <NavLink className='results__edit_btn' to='/anketa'>Редактировать</NavLink>
           </div>
           <div className="results">
-
               {block_of_debtAmount}
-
               {block_of_payDelay}
-
               {block_of_payToOneCreditor}
-
               {block_of_additionalQuestion1}
-
               {block_of_additionalQuestion2}
-
               {block_of_additionalQuestion3}
-
               {block_of_additionalQuestion4}
-
           </div>
         </div>
         <div className='results__cons'>

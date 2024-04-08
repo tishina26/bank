@@ -49,7 +49,7 @@ const AnketaResults = (props) => {
 
   if (loading) {
     return <div>Loading...</div>;
-  }
+  } 
 
   const block_of_debtAmount = (Object.keys(anketaData).length > 0) && (Object.keys(anketaData.debtAmount).length > 0) && (
     <>

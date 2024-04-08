@@ -87,7 +87,7 @@ function Documents(props) {
     </div>
   ))};
 
-
+ 
   const bankruptcyConclusion = (Object.keys(anketaData).length > 0) && (anketaData.bankruptcyConclusion);
 
   const docSyd = (Object.keys(bankruptcyConclusion).length > 0) &&

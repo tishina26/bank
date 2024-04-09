@@ -129,7 +129,6 @@ function App() {
   }
 
   function navToAnketa() {
-    // Сдалал так, не бейте пж
     nav("/anketa_result");
   }
 

@@ -17,6 +17,7 @@ const Anketa = (props) => {
   const [block_of_bankruptcyConclusion, setBlock_of_bankruptcyConclusion] = useState('');
   const [linkTo, setLinkTo] = useState('');
   const [nextDisabled, setNextDisabled] = useState(true);
+  const [isComplete, setIsComplete] = useState(false);
 
 
   const anketaEnded = () => {
@@ -90,6 +91,7 @@ const Anketa = (props) => {
     })
       .then((response) => {
         if (response.status === 401) {
+          setIsComplete(true)
           localStorage.setItem('anketaResults', JSON.stringify({
             debtAmount,
             payDelay,

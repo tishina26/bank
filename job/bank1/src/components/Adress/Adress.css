@@ -92,7 +92,12 @@
 
   margin-bottom: 5px; /* Отступ снизу */
 }
-
+.adress__info{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
 .form input[type="text"] {
   width: 100%; /* Занимает всю доступную ширину */
   padding: 10px; /* Внутренние отступы */
@@ -104,4 +109,56 @@
 .form input[type="text"]:focus {
   outline: none; /* Убирает рамку фокуса */
   border-color: #007bff; /* Цвет границы при фокусе */
+}
+@media screen and (max-width: 915px) {
+  .ship-list__ships{
+    width: 100%;
+  }
+  .form{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 659px) {
+  .ship-list__alphabet{
+    display: none;
+  }
+}
+@media screen and (max-width: 629px) {
+  .adress__info{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+
+  }
+  .ship-list__details{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 629px) {
+  .ship-list{
+    margin: 10px;
+  }
+  .form span{
+    width: 170px;
+    font-size: 15px;
+  }
+  .form input[type="text"]{
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 481px) {
+  .form{
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 7px;
+  }
+  .form span{
+    width: 240px;
+    font-size: 15px;
+  }
+  .form input[type="text"]{
+    font-size: 14px;
+    width: 95%;
+  }
 }

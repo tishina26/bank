@@ -1,6 +1,6 @@
 import React from "react";
 import "./PopupBurger.css";
-import account from "../../images/logo1.svg";
+import account from "../../images/profile.svg";
 import { NavLink } from "react-router-dom";
 
 function PopupBurger(props) {
@@ -13,10 +13,11 @@ function PopupBurger(props) {
       <div className="popupBurger__container">
         <div className="popupBurger__links">
           <NavLink to="/" className={ setActive }>Главная</NavLink>
-          <NavLink to="/movies" className={ setActive }>Фильмы</NavLink>
-          <NavLink to="/saved-movies" className={ setActive } onClick={props.openSavedMovies}>Сохранённые фильмы</NavLink>
+          <NavLink to="/anketa" className={ setActive }>Анкета</NavLink>
+          <NavLink to="/anketa_result" className={ setActive }>Результаты анкеты</NavLink>
+          <NavLink to="/documents" className={ setActive }>Мои документы</NavLink>
         </div>
-        <NavLink to="/profile" className="popupBurger__profile">Аккаунт
+        <NavLink to="/profile" className="popupBurger__profile">
           <img className="popupBurger__profile-image" src={account} alt="Кнопка Аккаунт"/>
         </NavLink>
       </div>

@@ -16,7 +16,7 @@ function Header(props) {
 
         <NavLink to="/" className='header__button header__button_logo'>
         <img alt="Лого" src={ logo1 } className="header__logo"/>
-          <img alt="Лого" src={ logo2 } className="header__logo"/>
+          <img alt="Лого" src={ logo2 } className="header__logo header__logo2"/>
         </NavLink>
 
 

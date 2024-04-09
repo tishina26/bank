@@ -159,18 +159,21 @@ function Adress(props) {
       <div className="ship-list__ships">
         {searchedShips.map((ship) => (
           <div key={ship.id} id={ship.id} className="ship-list__ship">
+            <div className='adress__info'>
             <span>{ship.name}</span>
 
-            {openShips.includes(ship.id) && (
-              <div className="ship-list__details">
-                <p><strong>Ссылка на сайт:</strong> <a href={ship.website}>{ship.website}</a></p>
-                <p><strong>Номер телефона:</strong> {ship.phoneNumber}</p>
-                <p><strong>Факс:</strong> {ship.fax}</p>
-                <p><strong>Адрес:</strong> {ship.adress}</p>
-                <p><strong>E-mail:</strong> {ship.email}</p>
-                {/* Другие детали о суде */}
-              </div>
-            )}
+{openShips.includes(ship.id) && (
+  <div className="ship-list__details">
+    <p><strong>Ссылка на сайт:</strong> <a href={ship.website}>{ship.website}</a></p>
+    <p><strong>Номер телефона:</strong> {ship.phoneNumber}</p>
+    <p><strong>Факс:</strong> {ship.fax}</p>
+    <p><strong>Адрес:</strong> {ship.adress}</p>
+    <p><strong>E-mail:</strong> {ship.email}</p>
+    {/* Другие детали о суде */}
+  </div>
+)}
+            </div>
+
             <button onClick={() => handleShipClick(ship.id)} className={buttonClasses[ship.id] || 'background1'}></button>
           </div>
         ))}

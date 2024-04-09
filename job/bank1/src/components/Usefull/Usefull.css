@@ -168,7 +168,36 @@ tr:nth-child(even) {
 b{
   position: relative;
 }
-.usefull__anketa:hover {
-  background-color: #E57E46;
-  color: white;
+
+@media screen and (max-width: 767px) {
+  .about-project__dev{
+    padding: 10px 20px;
+  }
+  .about-project__header{
+    margin-top: 0px;
+    padding-bottom: 5px;
+  }
+  .title{
+    margin-top: 35px;
+    padding-bottom: 5px;
+  }
+  *[tooltip]:hover:after {
+    position: absolute;
+    top: 45px;
+    left: -100px;
+    z-index: 1;
+    content: attr(tooltip);
+    border: #E57E46 2px solid;
+    background: linear-gradient(#d8d8d8, #ffffff,#d7d7d7) fixed;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    width: 300px;
+    border-radius: 5px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .usefull__link{
+    font-size: 16px;
+  }
 }

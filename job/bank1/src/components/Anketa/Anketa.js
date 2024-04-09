@@ -92,7 +92,7 @@ const Anketa = (props) => {
       .then((response) => {
         if (response.status === 401) {
           setIsComplete(true)
-          localStorage.setItem('anketaResults', JSON.stringify({
+          sessionStorage.setItem('anketaResults', JSON.stringify({
             debtAmount,
             payDelay,
             payToOneCreditor,

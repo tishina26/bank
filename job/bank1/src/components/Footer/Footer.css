@@ -50,19 +50,19 @@
 
 @media screen and (max-width: 1023px) and (min-width: 768px) {
     .footer__dev {
-        padding: 79px 30px 20px;
+        padding: 10px 30px 20px;
     }
 }
 
 @media screen and (max-width: 767px) {
     .footer__dev {
-        padding: 79px 10px 10px;
+        padding: 20px 10px 10px;
     }
 
     .footer__text {
         font-size: 12px;
         line-height: 14px;
-        padding: 0 0 20px;
+        padding: 0 0 10px;
     }
 
     .footer__info {

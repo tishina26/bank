@@ -22,6 +22,7 @@ function App() {
   const [isLoading, setLoad] = useState(true);
   const [currentUser, setCurUser] = useState({});
   const [errorOfRegister, setErrorReg] = useState("");
+  const [messageOfRegister, setMessageReg] = useState("");
   const [resultOfEdit, setResultOfEdit] = useState("");
   const nav = useNavigate();
 
@@ -60,12 +61,13 @@ function App() {
         if (res.token) {
           localStorage.setItem("token", res.token);
           checkAuthentication();
-          setErrorReg("");
-
         }
+        setErrorReg("");
+        setMessageReg("Регистрация прошла успешно!");
       })
       .catch((err) => {
         console.log(`Ошибка ${err.status}`);
+        setMessageReg("");
         err.status === 409
           ? setErrorReg("Пользователь с таким email уже существует")
           : setErrorReg("При регистрации пользователя произошла ошибка");
@@ -177,7 +179,7 @@ function App() {
               }
             />
            {loggedIn ? <Route path='*' element={<PageNotFound />} /> : <Route path='/signup' element={<Register name="Виталий"
-                  email="pochta@yandex.ru" onRegister={registerHandle} errorOfRegister={errorOfRegister} />} />}
+                  email="pochta@yandex.ru" onRegister={registerHandle} errorOfRegister={errorOfRegister} messageOfRegister={messageOfRegister} />} />}
           {loggedIn ? <Route path='*' element={<PageNotFound />} /> : <Route path='/signin' element={<Login name="Виталий"
                   email="pochta@yandex.ru" onLogin={loginHandle} errorOfLogin={errorOfLogin} />} />}
             <Route path="*" element={<PageNotFound/>}/>

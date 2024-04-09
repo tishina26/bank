@@ -71,33 +71,43 @@ function Documents(props) {
     <div key={doc.id}>
           <li>
             {doc.text}{" "}
-            <ul><li>Пустой шаблон
-            <button
-              className="documents__btn"
+            <ul ><div className='usefull__doc'>
+            <li>Пустой шаблон</li>
+            <div className='usefull__dows'>
+              <button
+              className="documents__btn documents__btn1"
               onClick={() => handleDownload(doc.file+'.docx')}
             >
               Скачать
             </button>
             <button
-              className="documents__btn"
+              className="documents__btn documents__btn1"
               onClick={() => handlePreview(doc.file+'_шаблон.pdf')}
             >
               Предпросмотр
             </button>
-            </li>
-            <li>Пример заполнения
+            </div>
+              </div>
+
+              <div className='usefull__doc'>
+              <li >Пример заполнения</li>
+            <div className='usefull__dows'>
             <button
-              className="documents__btn"
+              className="documents__btn documents__btn1"
               onClick={() => handleDownload(doc.file+'.pdf')}
             >
               Скачать
             </button>
             <button
-              className="documents__btn"
+              className="documents__btn documents__btn1"
               onClick={() => handlePreview(doc.file+'.pdf')}
             >
               Предпросмотр
-            </button></li></ul>
+            </button>
+            </div>
+              </div>
+
+            </ul>
           </li>
     </div>
   ))};

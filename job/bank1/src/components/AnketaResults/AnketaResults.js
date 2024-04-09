@@ -263,11 +263,11 @@ const block_of_bankruptcyConclusion_Less = (Object.keys(bankruptcyConclusion).le
           </div>
         </div>
         <div className='results__cons'>
-          <h2 className='anketa__conclusion-title' >Итоговое заключение</h2>
+          <h2 className='anketa__conclusion-title anketa__conclusion-title-res' >Итоговое заключение</h2>
           <div className='results__conc__text'>
             {block_of_bankruptcyConclusion}
           </div>
-          <div className='ahketa__btns'>
+          <div className='ahketa__btns ahketa-res__btns'>
                 <a className='results__more' href={linkMore}>Подробнее о вашей процедуре</a>
                 <a className='results__doc' href={linkDocs}>Перейти к документам</a>
               </div>

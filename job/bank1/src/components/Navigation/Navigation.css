@@ -47,7 +47,14 @@
   width: 150px;
   height: 35px;
 }
+@media screen and (max-width: 1023px) and (min-width: 767px) {
 
+  .navigation__link{
+    font-size: 14px;
+  }
+
+
+}
 
 
 @media screen and (max-width: 767px) {

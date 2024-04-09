@@ -13,7 +13,6 @@ function Register(props) {
   const [nameError, setNameError] = useState("");
   const [emailError, setEmailError] = useState("");
   const [isDisabled, setIsDisabled] = useState(true);
-  const [isRegistered, setIsRegistered] = useState(false); // New state for registration status
   const nav = useNavigate();
 
 
@@ -61,12 +60,11 @@ function Register(props) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    const anketa = localStorage.getItem('anketaResults')
+    const anketa = sessionStorage.getItem('anketaResults')
     props.onRegister(name, email, pass, anketa);
     setName("");
     setEmail("");
     setPass("");
-    setIsRegistered(true);
   }
 
   return (
@@ -127,9 +125,7 @@ function Register(props) {
           </fieldset>
           <div className="register__btn-error">
             <p className="register__error-text">{props.errorOfRegister}</p>
-            {isRegistered && (
-            <p className="register__success-message">Регистрация прошла успешно!</p>
-          )}
+            <p className="register__success-message">{props.messageOfRegister}</p>
           </div>
           <button
             className="register__btn register__btn_signup"

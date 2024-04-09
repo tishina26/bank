@@ -17,7 +17,7 @@
 }
 
 .popupBurger__button-close {
-  background-image: url("../../images/logo1.svg");
+  background-image: url("../../images/close.svg");
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -78,11 +78,12 @@
   font-size: 14px;
   font-weight: 500;
   line-height: 16px;
-  margin: 621px 0 0;
+  margin: 0px 0 0;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: opacity .2s ease;
+  margin-bottom: 100px;
 }
 
 .popupBurger__profile:hover {
@@ -90,8 +91,8 @@
 }
 
 .popupBurger__profile-image {
-  width: 10px;
-  height: 10px;
+  width: 120px;
+  height: 30px;
   padding: 10px;
   background-color: #f9f9f9;
   border-radius: 6px;

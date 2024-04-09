@@ -68,9 +68,26 @@
     column-gap: 5px;
 }
 
-@media screen and (max-width: 1023px) and (min-width: 768px) {
+@media screen and (max-width: 1023px) and (min-width: 767px) {
     .header__dev {
         padding: 18px 30px;
+    }
+    .header__logo{
+      width: 30px;
+      height: 30px;
+    }
+    .header__logo2{
+      width: 130px;
+      height: 30px;
+    }
+    .navigation__link{
+      font-size: 14px;
+    }
+
+    .header__button{
+      display: flex;
+      flex-direction: row;
+      align-items: flex-end;
     }
 }
 
@@ -93,10 +110,5 @@
         min-width: 283px;
     }
 }
-@media screen and (max-width:338px) {
-    .header__dev{
-        padding: 0;
-    }
 
-}
 

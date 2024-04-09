@@ -190,7 +190,7 @@ function Adress(props) {
               onInput={e => setSearchQuery(e.target.value)}
               type="text"
               id="header-search"
-              placeholder="Введите название суда"
+              placeholder="Введите название субъекта"
               name="s"
           />
       </form>

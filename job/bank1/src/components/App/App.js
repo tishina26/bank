@@ -52,24 +52,23 @@ function App() {
     }
   }
 
-  function registerHandle(name, email, password) {
+  function registerHandle(name, email, password, anketa) {
     setLoad(true);
     mainApi
-      .register(name, email, password)
+      .register(name, email, password, anketa)
       .then((res) => {
         if (res.token) {
           localStorage.setItem("token", res.token);
           checkAuthentication();
           setErrorReg("");
+
         }
       })
       .catch((err) => {
         console.log(`Ошибка ${err.status}`);
         err.status === 409
           ? setErrorReg("Пользователь с таким email уже существует")
-          : setErrorReg(
-              "При регистрации пользователя произошла ошибка"
-            );
+          : setErrorReg("При регистрации пользователя произошла ошибка");
       })
       .finally(() => setLoad(false));
   }

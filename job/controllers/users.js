@@ -15,9 +15,24 @@ const { getJwtToken } = require('../utils/utils');
 
 module.exports.createUser = async (req, res, next) => {
   try {
-    const { name, email } = req.body;
+    const { name, email,
+      debtAmount,
+      payDelay,
+      payToOneCreditor,
+      additionalQuestion1,
+      additionalQuestion2,
+      additionalQuestion3,
+      additionalQuestion4,
+      bankruptcyConclusion} = req.body;
     const hash = await bcrypt.hash(req.body.password, 10);
-    const user = await User.create({ name, email, password: hash });
+    const user = await User.create({ name, email, password: hash ,debtAmount,
+      payDelay,
+      payToOneCreditor,
+      additionalQuestion1,
+      additionalQuestion2,
+      additionalQuestion3,
+      additionalQuestion4,
+      bankruptcyConclusion});
     const user2 = await User.findOne({ _id: user._id });
     res.send({ data: user2 });
   } catch (err) {

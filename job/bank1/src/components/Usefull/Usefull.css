@@ -51,6 +51,7 @@
 .usefull_li{
   margin-top: 10px;
   margin-bottom: 5px;
+  position: relative;
 }
 .usefull__table{
   display: flex;
@@ -102,9 +103,10 @@
   color: #9c552f;
   cursor: pointer;
   font-weight: 400;
+  transition: 0.3s;
 }
-.text__termin::before {
-
+.text__termin:hover {
+  color: #7e4225;
 }
 .usefull__anketa{
   color:#E57E46;
@@ -117,9 +119,12 @@
   margin: 0 16px 0 0;
   transition: .3s;
   border-radius: 2px;
+  margin-bottom: 20px;
 }
 
-
+b{
+  position: relative;
+}
 .usefull__anketa:hover {
   background-color: #E57E46;
   color: white;

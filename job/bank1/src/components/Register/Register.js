@@ -61,11 +61,12 @@ function Register(props) {
 
   function handleSubmit(evt) {
     evt.preventDefault();
-    props.onRegister(name, email, pass);
+    const anketa = localStorage.getItem('anketaResults')
+    props.onRegister(name, email, pass, anketa);
     setName("");
     setEmail("");
     setPass("");
-    setIsRegistered(true); // Set registration status to true
+    setIsRegistered(true);
   }
 
   return (

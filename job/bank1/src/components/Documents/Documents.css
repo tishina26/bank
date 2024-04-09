@@ -26,7 +26,12 @@ h3 {
   margin-left: 10px;
   transition: 0.3s;
 }
-
+.doc__pam{
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  align-items: center;
+}
 .doc__more{
   background-color: white;
   margin-top: 20px;

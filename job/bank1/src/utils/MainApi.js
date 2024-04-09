@@ -35,11 +35,11 @@ export function checkTok(token) {
     .then(checkResponse)
 }
 
-export function register(name, email, password) {
+export function register(name, email, password, anketa) {
   return fetch(`${MY_URL}/signup`, {
     method: "POST",
     headers: {"Content-Type": "application/json"},
-    body: JSON.stringify({name, email, password})
+    body: JSON.stringify(Object.assign({name, email, password}, JSON.parse(anketa)))
   })
     .then(checkResponse)
     .then((res) => {

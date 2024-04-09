@@ -229,6 +229,30 @@ li::before {
   color: #98461a;
   transition: 0.4s;
  }
+ .KoAPRef{
+  text-decoration: none;
+  cursor: pointer;
+  color: #bd4d10;
+  transition: 0.4s;
+ }
+ .KoAPRef:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: #98461a;
+  transition: 0.4s;
+ }
+ .BankLawRef{
+  text-decoration: none;
+  cursor: pointer;
+  color: #bd4d10;
+  transition: 0.4s;
+ }
+ .BankLawRef:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: #98461a;
+  transition: 0.4s;
+ }
 
  .anketa__results{
   cursor: pointer;

@@ -25,7 +25,9 @@ function Header(props) {
           <Navigation/>
         ):(
           <div className="header__btns">
+            <NavLink to="/anketa_result" className={ setActive }>Результаты анкеты</NavLink>
             <NavLink to="/anketa" className={ setActive }>Анкета</NavLink>
+
             <div className="header__button_dev">
             <a href="/signup" className="header__button header__button_signup">Регистрация</a>
             <a className="header__button header__button_signin" href="/signin">Войти</a>

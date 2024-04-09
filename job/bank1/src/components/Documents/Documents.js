@@ -41,6 +41,21 @@ function Documents(props) {
     return <div>Loading...</div>;
   }
 
+  if (Object.keys(anketaData).length === 0) {
+    return (
+      <>
+      <Header loggedIn={props.loggedIn} theme={"header_theme_dark"} />
+      <main className='main'>
+        <h4>Чтобы получить пакет документов, пожалуйста, пройдите анкету.</h4>
+        <NavLink to="/anketa" className='usefull__anketa'>Пройти анкету</NavLink>
+
+      </main>
+      <Footer />
+    </>
+
+    );
+  }
+
   const documentNamesSyd = [
     {id: 1, text: 'Заявление гражданина о признании его банкротом через суд', file: 'Заявление_гр_о_пр_банк_ч_суд'},
     {id: 2, text: 'Опись имущества гражданина', file: 'опись_имущ_граж'},
@@ -48,7 +63,7 @@ function Documents(props) {
   ];
   const documentNamesVne = [
     {id: 1, text: 'Заявление гражданина о признании его банкротом во внесудебном порядке', file: 'Заявление_гр_о_пр_банк_вне'},
-    {id: 2, text: 'Список кредиторов и должников гражданина', file: 'список_кредиторов_вне.pdf'},
+    {id: 2, text: 'Список кредиторов и должников гражданина', file: 'список_кредиторов_вне'},
   ];
 
   function docs(docArr) {
@@ -62,7 +77,14 @@ function Documents(props) {
               onClick={() => handleDownload(doc.file+'.docx')}
             >
               Скачать
-            </button></li>
+            </button>
+            <button
+              className="documents__btn"
+              onClick={() => handlePreview(doc.file+'_шаблон.pdf')}
+            >
+              Предпросмотр
+            </button>
+            </li>
             <li>Пример заполнения
             <button
               className="documents__btn"
@@ -81,6 +103,7 @@ function Documents(props) {
   ))};
 
 
+
   const bankruptcyConclusion = anketaData.bankruptcyConclusion;
 
   const docSyd = (Object.keys(bankruptcyConclusion).length > 0) &&
@@ -89,7 +112,7 @@ function Documents(props) {
               className="documents__btn"
               onClick={() => handleDownload("весь_архив_суд.zip")}
             >
-              Скачать весь архив
+              Скачать все документы
             </button>
             <button
               className="documents__btn"
@@ -113,7 +136,7 @@ function Documents(props) {
               className="documents__btn"
               onClick={() => handleDownload("весь_архив_вне.zip")}
             >
-              Скачать весь архив
+              Скачать все документы
             </button>
             <button
               className="documents__btn"
@@ -192,6 +215,13 @@ function Documents(props) {
       {(doc === "both") && (
         <>
         <h2>Вам доступно два варианта банкротства. Необходимые документы:</h2>
+        <div className='doc__pam'>
+        <p>Полный перечень необходимых документов с пояснениями</p>
+        <button className="documents__btn" onClick={() => handleDownload('памятка.pdf')}>Скачать</button>
+        <button className="documents__btn" onClick={() => handlePreview('памятка.pdf')}>Предпросмотр</button>
+        </div>
+
+
         <div className='documents-container'>
           <div className='documents-column'>
             <h3>Документы для банкротства через суд</h3>
@@ -213,6 +243,11 @@ function Documents(props) {
       {(doc !== "both") && (
         <>
         <h2>Вам доступно только банкротство через суд. Необходимые документы:</h2>
+        <div className='doc__pam'>
+        <p>Полный перечень необходимых документов с пояснениями</p>
+        <button className="documents__btn" onClick={() => handleDownload('памятка.pdf')}>Скачать</button>
+        <button className="documents__btn" onClick={() => handlePreview('памятка.pdf')}>Предпросмотр</button>
+        </div>
         <div>
           {docSyd}
           <a className='doc__more' href='/usefull#syd'>Подробнее о вашей процедуре</a>

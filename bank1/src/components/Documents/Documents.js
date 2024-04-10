@@ -12,7 +12,7 @@ function Documents(props) {
   useEffect(() => {
     const token = localStorage.getItem("token");
     // Выполнение запроса к серверу для получения данных анкеты
-    fetch("/anketa", {
+    fetch("https://api.dolgoff.nomoredomains.club/anketa", {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${token}`
@@ -185,7 +185,7 @@ function Documents(props) {
     };
 
     // Отправляем запрос на сервер для загрузки файла
-    fetch(`${MY_URL}/files/${filename}`, {
+    fetch(`https://api.dolgoff.nomoredomains.club/files/${filename}`, {
       method: "GET",
       headers: headers
     })

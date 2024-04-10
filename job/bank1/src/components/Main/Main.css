@@ -16,3 +16,9 @@ fieldset {
 .main{
   min-height: calc(100vh - 300px);
 }
+@media screen and (max-width:456px) {
+  .main{
+      padding: 0;
+  }
+
+}

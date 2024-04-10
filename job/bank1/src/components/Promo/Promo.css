@@ -284,7 +284,7 @@ letter-spacing: -0.04em;
 }
 @media screen and (max-width:456px) {
     .promo__dev{
-        min-width: 300px;
+        width: 270px;
     }
 
 }

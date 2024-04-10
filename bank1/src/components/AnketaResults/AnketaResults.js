@@ -22,7 +22,7 @@ const AnketaResults = (props) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     // Выполнение запроса к серверу для получения данных анкеты
-    fetch("/anketa", {
+    fetch("https://api.dolgoff.nomoredomains.club/anketa", {
       method: "GET",
       headers: {
         "Authorization": `Bearer ${token}`

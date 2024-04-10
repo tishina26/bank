@@ -72,7 +72,7 @@ const Anketa = (props) => {
 
     const token = localStorage.getItem('token');
 
-    fetch('/anketa', {
+    fetch('https://api.dolgoff.nomoredomains.club/anketa', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

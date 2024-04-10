@@ -55,7 +55,20 @@
 
 
 }
+@media screen and (max-width: 351px) {
 
+  .navigation__link{
+    font-size: 12px;
+    padding-left: 10px;
+  }
+}
+@media screen and (max-width: 345px) {
+
+  .navigation__link{
+    font-size: 12px;
+    padding-left: 0;
+  }
+}
 
 @media screen and (max-width: 767px) {
   .navigation__links {

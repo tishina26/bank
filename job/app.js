@@ -7,6 +7,7 @@ const fs = require('fs');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
 const { errors } = require('celebrate');
+const corsOp = require('./middlewares/cors');
 const router = require('./routes/index');
 const { limiter } = require('./middlewares/limiter');
 const handleError = require('./middlewares/handleError');
@@ -25,7 +26,7 @@ async function main() {
 }
 
 main();
-
+app.use(corsOp);
 app.use(cors());
 app.use(helmet());
 app.use(requestLogger);

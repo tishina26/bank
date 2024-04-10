@@ -7,7 +7,7 @@ function getJwtToken() {
     if (!JWT_SECRET) {
       return JWT_SECRET_DEV;
     }
-    return JWT_SECRET_DEV;
+    return JWT_SECRET;
   }
   return JWT_SECRET_DEV;
 }

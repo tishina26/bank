@@ -24,7 +24,7 @@ export function authorise(email, password) {
 }
 
 export function checkTok(token) {
-  return fetch(`http://localhost:5000/users/me`, {
+  return fetch(`${MY_URL}/users/me`, {
     method: "GET",
     headers: {
       "Accept": "application/json",

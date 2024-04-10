@@ -99,7 +99,10 @@ li button {
   display: inline-block;
   transition: 0.3s;
 }
-
+.documents__btn2{
+  margin: 0;
+  padding: 0;
+}
 .navlink:hover {
 
   color: white;
@@ -112,7 +115,7 @@ li button {
 .usefull__doc{
   display: flex;
   flex-direction: row;
-
+  width: 50%;
   justify-content: space-between;
 }
 .usefull__dows{
@@ -127,11 +130,25 @@ li button {
   .documents-column{
     width: 70%;
   }
+  .usefull__doc{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+  }
 }
 @media screen and (max-width: 744px) {
-
+  .doc__pam{
+    height: auto;
+  }
   .documents-column{
     width: 100%;
+  }
+  .usefull__doc{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
   }
 }
 @media screen and (max-width: 500px) {

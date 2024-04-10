@@ -244,7 +244,7 @@ function Documents(props) {
 
             {docVne}
             <a className='doc__more' href='/usefull#vne'>Подробнее о вашей процедуре</a>
-            <p>Заявление подается в МФЦ по месту жительства или месту пребывания гражданина</p>
+            <p>Заявление подается в <a className='documents__btn documents__btn1 documents__btn2' rel="noopener noreferrer" target="_blank" href='https://xn--d1achjhdicc8bh4h.xn--p1ai/search/mfc'><b>МФЦ</b></a> по месту жительства или месту пребывания гражданина</p>
           </div>
         </div>
 

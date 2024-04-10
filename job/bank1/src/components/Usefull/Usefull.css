@@ -196,6 +196,114 @@ b{
     border-radius: 5px;
   }
 }
+@media screen and (max-width: 646px) {
+  .cell2{
+    font-size: 14px;
+
+  }
+  .cell3{
+    font-size: 14px;
+
+  }
+
+}
+@media screen and (max-width: 550px) {
+  .cell2{
+    font-size: 13px;
+
+  }
+  .cell3{
+    font-size: 13px;
+
+  }
+  .cell1{
+    font-size: 14px;
+  }
+  th{
+    font-size: 14px;
+  }
+
+}
+@media screen and (max-width: 512px) {
+  .cell2{
+    font-size: 11px;
+
+  }
+  .cell3{
+    font-size: 11px;
+
+  }
+  .cell1{
+    font-size: 12px;
+  }
+  th{
+    font-size: 12px;
+  }
+
+}
+@media screen and (max-width: 446px) {
+  .big__table {
+    overflow-x: auto; /* Включаем прокрутку по горизонтали при необходимости */
+    width: 100%; /* Обеспечиваем полную ширину для контейнера таблицы */
+  }
+
+  .about-project__dev {
+    padding: 5px 5px;
+}
+  .big__table table {
+
+
+  }
+  .main1{
+    padding: 5px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 250px;
+    text-align: left;
+    white-space: normal; /* Разрешаем перенос текста */
+    word-wrap: break-word; /* Разрешаем перенос слов */
+  }
+
+
+
+}
+@media screen and (max-width: 446px) {
+  .big__table {
+    overflow-x: auto; /* Включаем прокрутку по горизонтали при необходимости */
+    width: 100%; /* Обеспечиваем полную ширину для контейнера таблицы */
+  }
+
+  .about-project__dev {
+    padding: 0px 0px;
+    margin: 0px;
+    min-width: 310px;
+}
+  .big__table table {
+
+
+  }
+  .main1{
+    padding: 0px;
+    margin: 5px;
+  }
+
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    width: 250px;
+    text-align: left;
+    white-space: normal; /* Разрешаем перенос текста */
+    word-wrap: break-word; /* Разрешаем перенос слов */
+  }
+
+
+
+}
+
+
 @media screen and (max-width: 600px) {
   .usefull__link{
     font-size: 16px;

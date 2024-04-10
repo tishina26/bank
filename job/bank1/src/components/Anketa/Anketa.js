@@ -279,7 +279,7 @@ let link = ''
                     checked={payDelay === "yes"}
                     onChange={(e) => setPayDelay(e.target.value)}
                   />
-                  Да
+                  Да, я не плачу
                 </label>
                 <label>
                   <input
@@ -288,7 +288,7 @@ let link = ''
                     checked={payDelay === "no"}
                     onChange={(e) => setPayDelay(e.target.value)}
                   />
-                  Нет
+                  Нет, я плачу
                 </label>
               </div>
             </>
@@ -331,9 +331,9 @@ let link = ''
             <>
             <div className='anketa__que-container'>
               <>
-                <label className='anketa__que'>Для Вас актуальны такие обстоятельства?
-                <ul><li>с Вас не взыскивают долги, потому что Вам нечем по ним платить
-                </li><li>сейчас у Вас не пытаются взыскать другие долги по решению суда
+              <label className='anketa__que'>Для Вас одновременно актуальны такие обстоятельства?
+                <ul><li>в отношении Вас окончено принудительное взыскание долгов, т.к. у Вас нет имущества для их выплаты
+                </li><li>у Вас нет других неоконченных принудительных процедур по взысканию долгов
 
                 </li></ul></label>
                 <div className='anketa__ans-container anketa__ans-container_dop'>
@@ -359,7 +359,7 @@ let link = ''
                 <div className='anketa__line'></div>
               </>
               <>
-                <label className='anketa__que anketa__que_dop'>Для Вас актуальны такие обстоятельства?
+              <label className='anketa__que anketa__que_dop'>Для Вас одновременно актуальны такие обстоятельства?
                 <ul><li>основной Ваш доход - пенсия
                 </li><li>с Вас пытались взыскать долг по решению суда не позднее одного года назад, но это не удалось
                 </li><li>сейчас у Вас нет имущества, которым можно расплатиться по долгам
@@ -387,7 +387,7 @@ let link = ''
                 <div className='anketa__line'></div>
               </>
               <>
-                <label className='anketa__que anketa__que_dop'>Для Вас актуальны такие обстоятельства?
+              <label className='anketa__que anketa__que_dop'>Для Вас одновременно актуальны такие обстоятельства?
                 <ul><li>Вы получаете ежемесячное пособие на ребенка
                 </li><li>с Вас пытались взыскать долг по решению суда не позднее одного года назад, но это не удалось
                 </li><li>сейчас у Вас нет имущества, которым можно расплатиться по долгам

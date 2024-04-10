@@ -229,6 +229,30 @@ li::before {
   color: #98461a;
   transition: 0.4s;
  }
+ .KoAPRef{
+  text-decoration: none;
+  cursor: pointer;
+  color: #bd4d10;
+  transition: 0.4s;
+ }
+ .KoAPRef:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: #98461a;
+  transition: 0.4s;
+ }
+ .BankLawRef{
+  text-decoration: none;
+  cursor: pointer;
+  color: #bd4d10;
+  transition: 0.4s;
+ }
+ .BankLawRef:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: #98461a;
+  transition: 0.4s;
+ }
 
  .anketa__results{
   cursor: pointer;
@@ -248,4 +272,55 @@ li::before {
  .anketa__results:hover{
   background-color: #c5581d;
   color: white;
+ }
+ @media screen and (max-width: 780px) {
+  .anketa__form{
+    margin-top: 30px;
+    margin-left: 20px;
+    width: 90%;
+  }
+
+ }
+ @media screen and (max-width: 487px) {
+
+  .anketa__conc-container p {
+    font-size: 15px;
+  }
+  .anketa__text{
+    font-size: 15px;
+  }
+  .results__doc{
+    font-size: 11px;
+    width: 135px;
+    padding: 5px;
+    height: 15px;
+  }.results__more{
+    font-size: 11px;
+    width: 170px;
+    padding: 5px;
+    height: 15px;
+  }
+  .results__container{
+    margin-top: 10px;
+  }
+  .anketa__conclusion-title{
+    font-size: 23px;
+    margin-top: 0;
+  }
+ }
+ @media screen and (max-width: 411px) {
+
+
+  .results__doc{
+    font-size: 11px;
+    width: 100px;
+    padding: 5px;
+    height: 30px;
+  }.results__more{
+    font-size: 11px;
+    width: 120px;
+    padding: 5px;
+    height: 30px;
+  }
+
  }

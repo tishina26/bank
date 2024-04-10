@@ -83,3 +83,98 @@
   font-weight: 400;
   line-height: 24px;
 }
+.KoAPRef{
+  text-decoration: none;
+  cursor: pointer;
+  color: #bd4d10;
+  transition: 0.4s;
+ }
+ .KoAPRef:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: #98461a;
+  transition: 0.4s;
+ }
+ .BankLawRef{
+  text-decoration: none;
+  cursor: pointer;
+  color: #bd4d10;
+  transition: 0.4s;
+ }
+ .BankLawRef:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: #98461a;
+  transition: 0.4s;
+ }
+
+ @media screen and (max-width: 865px) {
+  .ahketa-res__btns{
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+  }
+  .results__container{
+    flex-direction: column;
+    align-items: center;
+  }
+  .results__con1{
+    width: 100%;
+  }
+  .results__cons{
+    width: 100%;
+  }
+ }
+ @media screen and (max-width: 543px) {
+  .results__container{
+    margin: 10px 10px 10px 0;
+  }
+  .results__conc__text div{
+    flex-direction: column;
+    align-items: start;
+  }
+ }
+
+ @media screen and (max-width: 487px) {
+  .anketa__conclusion-title-res{
+    margin-top: 15px;
+  }
+  .anketa__conc-container p {
+    font-size: 15px;
+  }
+  .anketa__text{
+    font-size: 15px;
+  }
+  .results__doc{
+    font-size: 11px;
+    width: 135px;
+    padding: 5px;
+    height: 15px;
+  }.results__more{
+    font-size: 11px;
+    width: 170px;
+    padding: 5px;
+    height: 15px;
+  }
+  .results__container{
+    margin-top: 10px;
+  }
+ }
+ @media screen and (max-width: 411px) {
+
+
+  .results__doc{
+    font-size: 11px;
+    width: 85px;
+    padding: 5px;
+    height: 30px;
+    text-align: center;
+  }.results__more{
+    text-align: center;
+    font-size: 11px;
+    width: 120px;
+    padding: 5px;
+    height: 30px;
+  }
+
+ }

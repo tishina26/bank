@@ -8,7 +8,7 @@ function Usefull(props) {
   return (
     <div>
     <Header loggedIn={props.loggedIn} theme={"header_theme_dark"} />
-    <main className='main'>
+    <main className='main1'>
     <section className="about-project">
       <div className="about-project__dev">
         <h2 className="about-project__header">Что такое банкротство?</h2>
@@ -39,7 +39,7 @@ function Usefull(props) {
 
 
 
-
+                <div className="big__table">
                 <table>
       <thead>
         <tr>
@@ -79,6 +79,7 @@ function Usefull(props) {
 
       </tbody>
     </table>
+    </div>
 
                 <p className="usefull__text2"><b>Необходимые документы:</b></p>
                 <li className="usefull_li">Личные документы (паспорт, СНИЛС, ИНН)</li>
@@ -129,7 +130,12 @@ function Usefull(props) {
 
 
                 {props.loggedIn ? (
-         <></>
+         <>
+         <h3>Если вы не знаете, какая процедура вам доступна, пожалуйста, пройдите нашу анкету</h3>
+         <NavLink to="/anketa" className='usefull__anketa'>Пройти анкету</NavLink>
+         <p className='anketa__text'>Чтобы избежать напрасных усилий, Вам необходимо правильно оформить все <a href='documents' className='anketa__register'> документы</a>. Воспользуйтесь составленными нами шаблонами заявления о признании Вас банкротом и полным пакетом <a href='documents' className='anketa__register'> документов</a>, необходимых к подаче вместе с ним.</p>
+
+        </>
         ):(
           <>
           <h3>Если вы не знаете, какая процедура вам доступна, пожалуйста, пройдите нашу анкету</h3>

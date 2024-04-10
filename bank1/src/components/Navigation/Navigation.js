@@ -21,6 +21,21 @@ function Navigation(props) {
   return (
     <section className="navigation">
       <div className="navigation__links">
+      {props.isComplete ? (
+        <>
+          <NavLink to="/anketa_result" className={ setActive }>Результаты анкеты</NavLink>
+          <NavLink to="/anketa" className={ setActive }>Анкета</NavLink>
+        <NavLink
+        to="/documents"
+        className={ setActive }>
+          Мои документы
+          </NavLink>
+          </>
+        ):(
+<></>
+        )}
+
+      <NavLink to="/anketa_result" className={ setActive }>Результаты анкеты</NavLink>
         <NavLink to="/anketa" className={ setActive }>Анкета</NavLink>
         <NavLink
         to="/documents"

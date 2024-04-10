@@ -16,7 +16,7 @@ function Header(props) {
 
         <NavLink to="/" className='header__button header__button_logo'>
         <img alt="Лого" src={ logo1 } className="header__logo"/>
-          <img alt="Лого" src={ logo2 } className="header__logo"/>
+          <img alt="Лого" src={ logo2 } className="header__logo header__logo2"/>
         </NavLink>
 
 
@@ -25,7 +25,9 @@ function Header(props) {
           <Navigation/>
         ):(
           <div className="header__btns">
+
             <NavLink to="/anketa" className={ setActive }>Анкета</NavLink>
+
             <div className="header__button_dev">
             <a href="/signup" className="header__button header__button_signup">Регистрация</a>
             <a className="header__button header__button_signin" href="/signin">Войти</a>

@@ -22,12 +22,7 @@ function Promo() {
 
           </div>
           <div className="promo__line"></div>
-          <div className="promo__block_sps">
-            <h2 className="promo__subtitle">Полезные ресурсы</h2>
-            <p className="promo__text">Здесь можно будет реализовать как-нибудь связь с СПС, пока в разработке</p>
-            <NavLink className='promo__button_sps'>Найти</NavLink>
 
-          </div>
 
         </div>
 

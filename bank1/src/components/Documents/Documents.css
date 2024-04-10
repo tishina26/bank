@@ -13,7 +13,6 @@ h3 {
 
   margin-top: 30px;
 }
-
 .documents__btn {
   margin-right: 10px;
   background-color: transparent;
@@ -25,8 +24,27 @@ h3 {
   border-radius: 3px;
   margin-left: 10px;
   transition: 0.3s;
-}
 
+}
+.documents__btn1 {
+  margin-right: 10px;
+  background-color: transparent;
+  color: #E57E46;
+  border: none;
+  text-decoration: underline;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 3px;
+  margin-left: 10px;
+  transition: 0.3s;
+  margin-bottom: 10px;
+}
+.doc__pam{
+  display: flex;
+  flex-direction: row;
+  height: 30px;
+  align-items: center;
+}
 .doc__more{
   background-color: white;
   margin-top: 20px;
@@ -81,9 +99,71 @@ li button {
   display: inline-block;
   transition: 0.3s;
 }
-
+.documents__btn2{
+  margin: 0;
+  padding: 0;
+}
 .navlink:hover {
 
   color: white;
   background-color: #E57E46;
+}
+.usefull__anketa:hover {
+  background-color: #E57E46;
+  color: white;
+}
+.usefull__doc{
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: space-between;
+}
+.usefull__dows{
+  align-self: flex-end;
+  display: flex;
+}
+@media screen and (max-width: 972px) {
+  .documents-container{
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .documents-column{
+    width: 70%;
+  }
+  .usefull__doc{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 744px) {
+  .doc__pam{
+    height: auto;
+  }
+  .documents-column{
+    width: 100%;
+  }
+  .usefull__doc{
+    display: flex;
+    flex-direction: row;
+
+    justify-content: space-between;
+  }
+}
+@media screen and (max-width: 500px) {
+  .usefull__doc{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .usefull__dows{
+    align-self: flex-start;
+    display: flex;
+  }
+  .doc__pam{
+    flex-direction: column;
+    height: auto;
+    align-items: start;
+  }
 }

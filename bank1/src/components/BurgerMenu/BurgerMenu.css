@@ -9,7 +9,7 @@
 .burger-menu__button {
   width: 28px;
   height: 28px;
-  background-image: url("../../images/logo1.svg");
+  background-image: url("../../images/menu.svg");
   background-position: center;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -30,7 +30,8 @@
 
 @media screen and (max-width: 767px) {
   .burger-menu__button {
-      width: 22px;
-      height: 24px;
+      width: 25px;
+      height: 25px;
+      background-size: contain;
   }
 }

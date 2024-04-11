@@ -194,7 +194,9 @@ b{
     font-weight: 400;
     width: 200px;
     border-radius: 5px;
+
   }
+
 }
 @media screen and (max-width: 646px) {
   .cell2{

@@ -135,7 +135,7 @@ tr:nth-child(even) {
   padding: 5px;
   font-size: 12px;
   font-weight: 400;
-  width: 300px;
+  width: 200px;
   border-radius: 5px;
 }
 
@@ -184,7 +184,7 @@ b{
   *[tooltip]:hover:after {
     position: absolute;
     top: 45px;
-    left: -100px;
+    left: -10px;
     z-index: 1;
     content: attr(tooltip);
     border: #E57E46 2px solid;
@@ -192,7 +192,7 @@ b{
     padding: 5px;
     font-size: 14px;
     font-weight: 400;
-    width: 300px;
+    width: 200px;
     border-radius: 5px;
   }
 }
@@ -204,6 +204,20 @@ b{
   .cell3{
     font-size: 14px;
 
+  }
+  *[tooltip]:hover:after {
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    z-index: 1;
+    content: attr(tooltip);
+    border: #E57E46 2px solid;
+    background: linear-gradient(#d8d8d8, #ffffff,#d7d7d7) fixed;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    width: 155px;
+    border-radius: 5px;
   }
 
 }
@@ -238,6 +252,20 @@ b{
   }
   th{
     font-size: 12px;
+  }
+  *[tooltip]:hover:after {
+    position: absolute;
+    top: 45px;
+    left: 0px;
+    z-index: 1;
+    content: attr(tooltip);
+    border: #E57E46 2px solid;
+    background: linear-gradient(#d8d8d8, #ffffff,#d7d7d7) fixed;
+    padding: 5px;
+    font-size: 13px;
+    font-weight: 400;
+    width: 140px;
+    border-radius: 5px;
   }
 
 }
@@ -298,11 +326,29 @@ b{
     white-space: normal; /* Разрешаем перенос текста */
     word-wrap: break-word; /* Разрешаем перенос слов */
   }
+  *[tooltip]:hover:after {
+    position: absolute;
+    top: 45px;
+    left: -20px;
+    z-index: 1;
+    content: attr(tooltip);
+    border: #E57E46 2px solid;
+    background: linear-gradient(#d8d8d8, #ffffff,#d7d7d7) fixed;
+    padding: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    width: 135px;
+    border-radius: 5px;
+  }
 
 
 
 }
-
+@media screen and (max-width: 600px) {
+  .usefull__link{
+    font-size: 16px;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .usefull__link{

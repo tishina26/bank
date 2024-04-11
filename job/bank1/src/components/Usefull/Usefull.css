@@ -269,6 +269,9 @@ b{
     width: 140px;
     border-radius: 5px;
   }
+  .text__termin1[tooltip]:hover:after{
+    left: -50px;
+  }
 
 }
 @media screen and (max-width: 446px) {
@@ -331,7 +334,7 @@ b{
   *[tooltip]:hover:after {
     position: absolute;
     top: 45px;
-    left: -20px;
+    left: -5px;
     z-index: 1;
     content: attr(tooltip);
     border: #E57E46 2px solid;
